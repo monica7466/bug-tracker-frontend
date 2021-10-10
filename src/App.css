@@ -52,8 +52,19 @@
   
 }
 
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color:darkturquoise;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
 .adminDash{
   text-align: left;
+  float:none;
 }
 
 .data{

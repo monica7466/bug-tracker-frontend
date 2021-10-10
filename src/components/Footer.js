@@ -5,11 +5,11 @@ import '../App.css';
 const Footer = () => {
  
     return (
-        <footer class="footer sticky-top">
-            <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-primary bg-primary">
-                <div class="container">
-                    <div class="collapse navbar-collapse navbar-dark" id="navbarResponsive">
-                        <ul class="navbar-nav ml-auto">
+        <footer className="footer sticky-top">
+            <nav className="navbar navbar-fixed-top navbar-expand-lg navbar-primary bg-primary">
+                <div className="container">
+                    <div className="collapse navbar-collapse navbar-dark" id="navbarResponsive">
+                        <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
                                 <h6 >Facebook </h6>
                             </li>

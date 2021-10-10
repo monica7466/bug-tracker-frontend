@@ -41,7 +41,7 @@ export const AddBug = () => {
               setDes(event.target.value);
             }}
           />
-          <label htmlFor="issueDecInput">
+          <label>
             Description <span className="text-danger">*</span>
           </label>
           <input

@@ -14,7 +14,7 @@ const Routes = () => {
         <div>
             <Router>
                 <div>
-                    <Header/>
+                   
                     <div>
                     <Switch>
                            <Route exact path="/"> <Home /> </Route>
@@ -27,8 +27,9 @@ const Routes = () => {
                     </Switch>
                     </div>
                 </div>
+                
             </Router>
-            <Footer/>
+              
         </div>
     )
 }

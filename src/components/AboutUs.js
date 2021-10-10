@@ -1,25 +1,30 @@
 import React from 'react';
+import Routes from '../Routes';
+
+import AdminDashboard from './admin/AdminDashboard';
+
+import Footer from './Footer';
+import Header from './Header';
 
 const AboutUs = () => {
 
     return (
         <div>
-
-            <div className="about-style">
-            {/* </div> */}
-            <h1>hello</h1>
-            <div className="data">
-                Are you ready to take on the challenge?
-
-                Helping our clients grow while building a more sustainable and inclusive future is where our excellence lies!
-
-                When you join Capgemini in India, you join a thriving company and become a part of a diverse global collective of free- thinkers, entrepreneurs, and industry experts who are all driven to use technology to reimagine what’s possible.
-
-                Together, we work to transform the world’s leading businesses while sharing knowledge and pushing ourselves to do better. It’s how we shape great careers and give innovation that human touch the world needs.
-
-
+            <div className="d-flex pb-4">
+                <AdminDashboard />
+                {/* <AppSideBar/> */}
+                <div>
+                    {/* <Header />
+                    <Routes /> */}
+                    {/* <router-outlet></router-outlet> */}
+                </div>
             </div>
-             </div>
+            <Footer />
+            {/* <div className="about-style">
+
+                <h1>hello</h1>
+                <PageLayout />
+            </div> */}
         </div>
     )
 }
