@@ -76,6 +76,58 @@
   height: 70vh;
   overflow-y: auto;
 }
+.button1{
+  margin-left: 500px;
+  margin-top: 152px;
+  height: 94px;
+  width: 174px;
+  color: white;
+  background: brown;
+}
+
+.button2{
+  margin-left: 350px;
+  margin-top: 152px;
+  height: 94px;
+  width: 174px;
+  color: white;
+  background: darkgreen;
+}
+.button3{
+  margin-top: 342px;
+  margin-left: 57px;
+  height: 94px;
+  width: 174px;
+  color: black;
+  background: orange;
+}
+
+.button4{
+  margin-left: 780px;
+  margin-top: -94px;
+  /* margin-bottom: 300px; */
+  height: 94px;
+  width: 174px;
+  color: white;
+  background: rgb(90, 2, 90);
+}
+
+.button5{
+  margin-top: -94px;
+  margin-left: -650px;
+  /* margin-bottom: 300px; */
+  height: 94px;
+  width: 174px;
+  color: black;
+  background: darkgrey;
+}
+
+.ref{
+  height: 88vh;
+  width: 202vh;
+  font-size: 24px;
+  color: white;
+}
  
 @keyframes App-logo-spin {
   from {
