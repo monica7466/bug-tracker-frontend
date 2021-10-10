@@ -5,6 +5,7 @@ import AdminDashboard from './admin/AdminDashboard';
 
 import Footer from './Footer';
 import Header from './Header';
+import StaffDashboard from './staff/StaffDashboard';
 
 const AboutUs = () => {
 
@@ -12,7 +13,8 @@ const AboutUs = () => {
         <div>
 
             <div className="d-flex pb-4">
-                <AdminDashboard />
+                {/* <AdminDashboard /> */}
+                <StaffDashboard/>
                 {/* <AppSideBar/> */}
                 <div>
                     {/* <Header />
