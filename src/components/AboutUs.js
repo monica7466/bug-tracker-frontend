@@ -10,6 +10,7 @@ const AboutUs = () => {
 
     return (
         <div>
+
             <div className="d-flex pb-4">
                 <AdminDashboard />
                 {/* <AppSideBar/> */}
@@ -19,7 +20,7 @@ const AboutUs = () => {
                     {/* <router-outlet></router-outlet> */}
                 </div>
             </div>
-            <Footer />
+            {/* <Footer /> */}
             {/* <div className="about-style">
 
                 <h1>hello</h1>
