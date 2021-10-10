@@ -11,7 +11,7 @@ const Register = (props) => {
         () => {
             setAppUser({
                 userId: 0,
-                email: '',
+                userName: '',
                 password: ''
             }
             );
@@ -26,7 +26,7 @@ const Register = (props) => {
     };
 
     const submitAppUser = (event) => {
-        console.log(appUser.email);
+        console.log(appUser.userName);
         console.log(appUser.password);
         const config = {
             headers: {
@@ -49,15 +49,27 @@ const Register = (props) => {
             <div>
                 <form className="form form-group form-dark row mt-3" onSubmit={submitAppUser}>
                     <div className="mb-3">
-                        <input
-                            type="email"
-                            name="email"
-                            id="email"
+                    <input
+                            type="number"
+                            name="userId"
+                            id="userId"
                             // Add data-testid here : jest-test  
-                            data-testid="email"
+                            data-testid="userId"
                             className="form-control mb-3"
-                            placeholder="Email"
-                            value={appUser.email}
+                            placeholder="User Id"
+                            // value={appUser.userId}
+                            onChange={handleAppUser}
+                        />
+                        
+                        <input
+                            type="name"
+                            name="userName"
+                            id="userName"
+                            // Add data-testid here : jest-test  
+                            data-testid="userName"
+                            className="form-control mb-3"
+                            placeholder="User Name"
+                            value={appUser.userName}
                             onChange={handleAppUser}
                         />
                         <input
@@ -68,6 +80,17 @@ const Register = (props) => {
                             data-testid="password"
                             className="form-control mb-3"
                             placeholder="Password"
+                            value={appUser.password}
+                            onChange={handleAppUser} />
+
+                        <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            // Add data-testid here : jest-test  
+                            data-testid="password"
+                            className="form-control mb-3"
+                            placeholder="Confirm Password"
                             value={appUser.password}
                             onChange={handleAppUser} />
                         <input

@@ -18,7 +18,13 @@ const Header = () => {
                     <div class="collapse navbar-collapse navbar-dark" id="navbarResponsive">
                         <ul class="navbar-nav ml-auto">
                         <li className="nav-item">
-                                <Link className="nav-link" to="/login">Login</Link>
+                                <Link className="nav-link" to="/about">About us</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/contact">Contact</Link>
+                            </li>
+                        <li className="nav-item">
+                                <Link className="nav-link" to="/adminDashboard">Admin</Link>
                             </li>
                             <li className="nav-item align-end">
                                 {/* align right this item  */}

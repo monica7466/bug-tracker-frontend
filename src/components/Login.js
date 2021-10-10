@@ -2,20 +2,21 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from "axios";
+// import Dashboard from './Dashboard';
 
 const Login = (props) => {
 
     const history = useHistory();
 
     const [AppUser, setAppUser] = useState({
-        email: '',
+        userId: '',
         password: ''
     });
 
     useEffect(
         () => {
             setAppUser({
-                email: '',
+                userId: '',
                 password: ''
             }
             );
@@ -30,7 +31,7 @@ const Login = (props) => {
     };
 
     const submitAppUser = (event) => {
-        console.log(AppUser.email);
+        console.log(AppUser.userId);
         console.log(AppUser.password);
         // axios.post(`http://localhost:8082/appuser/login`, AppUser)
         //     .then((response) => {
@@ -50,13 +51,13 @@ const Login = (props) => {
                         <input
                             type="text"
                             className="form-control"
-                            name="email"
-                            id="email"
+                            name="username"
+                            id="username"
                             // Add data-testid here : jest-test  
-                            data-testid="email"
+                            data-testid="username"
                             className="form-control mb-3"
-                            placeholder="Email"
-                            value={AppUser.email}
+                            placeholder="User ID"
+                            value={AppUser.userId}
                             onChange={handleAppUser}
                             required
                         />
@@ -85,6 +86,7 @@ const Login = (props) => {
                     </div>
                 </form>
             </div>
+            {/* <Dashboard/> */}
         </div >
     )
 }

@@ -30,11 +30,35 @@
  
 .mdb-navbar {
   background-image: url('./Assest/backgd2.png');
-  height: 550px;
-  width : 900px;
+  height: 70vh;
+  width : 70vw;
   align-items: center;
   text-align: center;
- 
+  background-size: cover;
+  background-repeat:space;
+  background-position: 'center', 
+}
+.about-style{
+  background-image: url('./Assest/backgd1.png');
+  padding: auto;
+  height: 70vh;
+  /* width :  70vw; */
+  align-items: center;
+  text-align: center;
+  background-color: bisque;
+  background-size: cover;
+  background-repeat:space;
+  background-position: 'center', 
+  
+}
+
+.adminDash{
+  text-align: left;
+}
+
+.data{
+  height: 70vh;
+  overflow-y: auto;
 }
  
 @keyframes App-logo-spin {
