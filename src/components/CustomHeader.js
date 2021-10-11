@@ -2,13 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
 import AdminDashboard from './admin/AdminDashboard';
-
-const Header = () => {
+ 
+const CustomHeader = () => {
+    
     return (
         <div>
             <header className="header sticky-top">
                 <nav className="navbar navbar-fixed-top navbar-expand-lg navbar-primary bg-primary">
+                <h4 className="navbar navbar-light">Welcome</h4>
                     <div className="container">
+                        
                         <Link className="navbar-brand" to="/home">
                             <img src="https://www.pikpng.com/pngl/b/140-1404779_tracking-and-fixing-bugs-is-no-more-a.png"
                                 height="50px" alt="Bug" />
@@ -18,34 +21,24 @@ const Header = () => {
                         </button>
                         <div className="collapse navbar-collapse navbar-dark" id="navbarResponsive">
                             <ul className="navbar-nav ml-auto">
-                                
-                        <li className="nav-item">
+                                <li className="nav-item">
                                     <Link className="nav-link" to="/about">About us</Link>
                                 </li>
-
                                 <li className="nav-item">
                                     <Link className="nav-link" to="/contact">Contact</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/adminDashboard">Admin</Link>
+                                    <Link className="nav-link" to="/home">Logout</Link>
                                 </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link" to="/staffDashboard">Staff</Link>
-                                </li>
-                                <li className="nav-item align-end">
-                                    {/* align right this item  */}
-                                    <Link className="nav-link" to="/register">Register</Link>
-                                </li>
-
-
+ 
                             </ul>
                         </div>
                     </div>
                 </nav>
+                <AdminDashboard />
             </header>
-            {/* <AdminDashboard /> */}
         </div>
     );
-
+ 
 }
-export default Header;
+export default CustomHeader;

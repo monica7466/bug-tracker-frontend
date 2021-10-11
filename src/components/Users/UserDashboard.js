@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-
-const StaffDashboard = () => {
-
+ 
+const UsersDashboard = () => {
+ 
     return (
         <div className="sidebar">
             {/* <div className="adminDash">
@@ -18,16 +17,15 @@ const StaffDashboard = () => {
         <Link className="nav-link display-5 text-light" to="/home">Message</Link> */}
          <h6 className="display-5 text-dark">Dashboard</h6>
                 <div>
-                    <Link className="nav-link display-5 text-light" to="/staffs">Staffs</Link>
+                    <Link className="nav-link display-5 text-light" to="/bug">Bug</Link>
                 </div>
                 <div>
-                <Link className="nav-link display-5 text-light" to="/projects">Project</Link>
+                <Link className="nav-link display-5 text-light" to="/messages">Messages</Link>
                 </div>
                 <div>
-                <Link className="nav-link display-5 text-light" to="/reports">Report</Link>
+                <Link className="nav-link display-5 text-light" to="/projectReport">Project Reports</Link>
                 </div>
         </div>
     )
 }
-export default StaffDashboard;
-
+export default UsersDashboard;

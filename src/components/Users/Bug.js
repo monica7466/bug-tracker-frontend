@@ -1,9 +1,7 @@
 import React from 'react';
-import AdminDashboard from './AdminDashboard';
-
-
-const Bugs = () => {
-
+ 
+const Bug = () => {
+ 
     return (
         <div>
             <div>
@@ -13,13 +11,18 @@ const Bugs = () => {
                     <div className="ref">
                     <h3 style={{color:"blue",marginTop:"20px",marginLeft:"100px"}}>Bugs</h3>
                         <div className="row">
-                            <button className="button1">Get all bugs</button>
-                            <button className="button2">Search bug by ID</button>
+                            <button className="button1">Add bugs</button>
+                            <button className="button2">Update bug</button>
+                            <button className="button3">Delete bug</button>
+                            <button className="button4">Search bug</button>
                         </div>
                     </div>
+ 
                 </div>
+ 
             </div>
+ 
         </div>
     )
 }
-export default Bugs;
+export default Bug;

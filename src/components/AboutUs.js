@@ -14,7 +14,7 @@ const AboutUs = () => {
 
             <div className="d-flex pb-4">
                 {/* <AdminDashboard /> */}
-                <StaffDashboard/>
+                {/* <StaffDashboard/> */}
                 {/* <AppSideBar/> */}
                 <div>
                     {/* <Header />
