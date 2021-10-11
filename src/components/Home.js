@@ -2,6 +2,9 @@ import React from 'react';
 import AddBug from './AddBug';
 import AddMessage from './admin/AddMessage';
 import AddProject from './admin/AddProject';
+import DeleteStaff from './admin/DeleteStaff';
+import SearchStaffById from './admin/SearchStaffById';
+import ViewAllStaff from './admin/ViewAllStaff';
 
 const Home = () => {
 
@@ -22,7 +25,11 @@ const Home = () => {
                             </div> */}
             {/* </div> */}
             {/* <AddProject/> */}
-            <AddMessage/>
+            {/* <AddMessage/> */}
+            <ViewAllStaff/>
+            {/* <SearchStaffById />
+             */}
+             <DeleteStaff/>
         </div>
         </div >
     )
