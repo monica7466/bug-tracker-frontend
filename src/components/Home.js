@@ -4,6 +4,7 @@ import AddMessage from './admin/AddMessage';
 import AddProject from './admin/AddProject';
 import DeleteStaff from './admin/DeleteStaff';
 import SearchStaffById from './admin/SearchStaffById';
+import UpdateStaff from './admin/UpdateStaff';
 import ViewAllStaff from './admin/ViewAllStaff';
 
 const Home = () => {
@@ -26,10 +27,11 @@ const Home = () => {
             {/* </div> */}
             {/* <AddProject/> */}
             {/* <AddMessage/> */}
-            <ViewAllStaff/>
+            {/* <ViewAllStaff/> */}
             {/* <SearchStaffById />
              */}
-             <DeleteStaff/>
+             {/* <DeleteStaff/> */}
+             {/* <UpdateStaff/> */}
         </div>
         </div >
     )

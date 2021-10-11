@@ -32,6 +32,9 @@ const Header = () => {
                                 <li className="nav-item">
                                     <Link className="nav-link" to="/staffDashboard">Staff</Link>
                                 </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/userDashboard">User</Link>
+                                </li>
                                 <li className="nav-item align-end">
                                     {/* align right this item  */}
                                     <Link className="nav-link" to="/register">Register</Link>
@@ -43,7 +46,7 @@ const Header = () => {
                     </div>
                 </nav>
             </header>
-            {/* <AdminDashboard /> */}
+            <AdminDashboard />
         </div>
     );
 

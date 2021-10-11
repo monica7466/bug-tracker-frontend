@@ -35,8 +35,9 @@ const CustomHeader = () => {
                         </div>
                     </div>
                 </nav>
-                <AdminDashboard />
+                
             </header>
+            <AdminDashboard />
         </div>
     );
  
