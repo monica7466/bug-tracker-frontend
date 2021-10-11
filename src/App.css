@@ -122,6 +122,21 @@
   background: darkgrey;
 }
 
+
+.align {
+  padding: 100px;
+  margin-left: 100px;
+  
+}
+
+.alignment{
+  margin-left: 300px;
+}
+
+.alignment1{
+  margin-left: 100px;
+}
+
 .ref{
   height: 88vh;
   width: 202vh;
