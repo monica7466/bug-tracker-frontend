@@ -27,6 +27,20 @@ const Staff = () => {
         event.preventDefault();
     }
 
+    const submitAddStaff = (event) => {
+
+
+        history.push('/addStaff');
+
+        event.preventDefault();
+    }
+    const viewStaff = (event) => {
+
+
+        history.push('/getAllStaff');
+
+        event.preventDefault();
+    }
 
 
     return (
@@ -45,7 +59,7 @@ const Staff = () => {
                                     <h5 class="card-title text-dark">Add Staff</h5>
                                     <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                     {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
-                                    <button type="button" class="btn btn-primary" >Add</button>
+                                    <button type="button" class="btn btn-primary" onClick={submitAddStaff}>Add</button>
                                 </div>
                             </div>
                             <div class="card" style={{ width: "18rem" }}>
@@ -77,7 +91,7 @@ const Staff = () => {
                                 <div class="card-body">
                                     <h5 class="card-title text-dark">Get All Staff</h5>
                                     <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <button type="button" class="btn btn-primary" >getAll</button>
+                                    <button type="button" class="btn btn-primary" onClick={viewStaff}>getAll</button>
                                 </div>
                             </div>
                         </div>

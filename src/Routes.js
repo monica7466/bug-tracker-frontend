@@ -26,14 +26,20 @@ import SearchStaffById from './components/admin/SearchStaffById';
 import UpdateStaff from './components/admin/UpdateStaff';
 import AddMessage from './components/admin/AddMessage';
 import DeleteStaff from './components/admin/DeleteStaff';
- 
+import AddProject from './components/admin/AddProject';
+import GetAllProject from './components/admin/GetAllProject';
+import SearchProject from './components/admin/SearchProject';
+import UpdateProject from './components/admin/UpdateProject';
+import DeleteProject from './components/admin/DeleteProject';
+import AddStaff from './components/admin/AddStaff';
+import GetAllStaff from './components/admin/GetAllStaff';
 const Routes = () => {
     return(
         <div>
             <Router>
-                <div>
-                    <CustomHeader/>
-                    <div>
+                {/* <div> */}
+                    {/* <CustomHeader/> */}
+                    {/* <div>
                         <Switch>
                             <Route path="/adminDashboard"><AdminDashboard/></Route>
                             <Route path="/about"><AboutUs/></Route>
@@ -48,7 +54,7 @@ const Routes = () => {
                             <Route path="/SearchStaffById"><SearchStaffById/></Route>
                         </Switch>
                     </div>
-                    </div>
+                    </div> */}
                 <div>
                    <Header/>
                     <div>
@@ -67,10 +73,28 @@ const Routes = () => {
                             <Route path="/reports"><Reports /></Route>
                             <Route path="/bug"><Bug/></Route>
                             <Route path="/messages"><Messages/></Route>
-                            <Route path="/customHeader"><CustomHeader/></Route>
+                            {/* <Route path="/customHeader"><CustomHeader/></Route> */}
                             <Route path="/projectReport"><ProjectReport/></Route>
                             <Route path="/staffDashboard"><StaffDashboard/></Route>
                             <Route path="/userDashboard"><UserDashboard/></Route>
+                            <Route path="/addProject"><AddProject/></Route>
+                            <Route path="/searchProject"><SearchProject/></Route>
+                            <Route path="/getAllProject"><GetAllProject/></Route>
+                            <Route path="/updateProject"><UpdateProject/></Route>
+                            <Route path="/deleteProject"><DeleteProject/></Route>
+                            <Route path="/addStaff"><AddStaff/></Route>
+                            <Route path="/getAllStaff"><GetAllStaff/></Route>
+                            <Route path="/adminDashboard"><AdminDashboard/></Route>
+                            <Route path="/about"><AboutUs/></Route>
+                            <Route path="/adminDashboard/bugs"><Bugs/></Route>
+                            <Route path="/message"><Message/></Route>
+                            <Route path="/staff"><Staff/></Route>
+                            <Route path="/project"><Project/></Route>
+                            <Route path="/report"><Report/></Route>
+                            <Route path="/UpdateStaff"><UpdateStaff/></Route>
+                            <Route path="/addMessage"><AddMessage/></Route>
+                            <Route path="/deleteStaff"><DeleteStaff/></Route>
+                            <Route path="/SearchStaffById"><SearchStaffById/></Route>
                     </Switch>
                     </div>
                 </div>

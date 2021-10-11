@@ -1,9 +1,45 @@
 import React from 'react';
-import AdminDashboard from './AdminDashboard';
+import { useHistory } from 'react-router';
 
 
 const Project = () => {
+    const history = useHistory();
 
+    const submitAddProject = (event) => {
+
+
+        history.push('/AddProject');
+
+        event.preventDefault();
+    }
+    const viewProject = (event) => {
+
+
+        history.push('/GetAllProject');
+
+        event.preventDefault();
+    }
+    const SearchProjectById = (event) => {
+
+
+        history.push('/searchProject');
+
+        event.preventDefault();
+    }
+    const updateProjectDetails = (event) => {
+
+
+        history.push('/updateProject');
+
+        event.preventDefault();
+    }
+    const DeleteProject = (event) => {
+
+
+        history.push('/deleteProject');
+
+        event.preventDefault();
+    }
     return (
         <div>
             <div>
@@ -20,7 +56,7 @@ const Project = () => {
                         <h5 class="card-title text-dark">Add Project</h5>
                         <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
-                        <button type="button" class="btn btn-primary" >Add</button>
+                        <button type="button" class="btn btn-primary" onClick={submitAddProject} >Add</button>
                     </div>
                 </div>
                 <div class="card" style={{ width: "18rem" }}>
@@ -28,7 +64,7 @@ const Project = () => {
                     <div class="card-body">
                         <h5 class="card-title text-dark">Update Project</h5>
                         <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <button type="button" class="btn btn-primary" >Update</button>
+                        <button type="button" class="btn btn-primary" onClick={updateProjectDetails}>Update</button>
                     </div>
                 </div>
                 <div class="card" style={{ width: "18rem" }}>
@@ -36,7 +72,7 @@ const Project = () => {
                     <div class="card-body">
                         <h5 class="card-title text-dark">Search Project</h5>
                         <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <button type="button" class="btn btn-primary" >Search</button>
+                        <button type="button" class="btn btn-primary" onClick={SearchProjectById}>Search</button>
                     </div>
                 </div>
                 <div class="card" style={{ width: "18rem" }}>
@@ -44,7 +80,7 @@ const Project = () => {
                     <div class="card-body">
                         <h5 class="card-title text-dark">Delete Project</h5>
                         <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <button type="button" class="btn btn-primary" >Delete</button>
+                        <button type="button" class="btn btn-primary" onClick={DeleteProject}>Delete</button>
                     </div>
                 </div>
                 <div class="card" style={{ width: "18rem" }}>
@@ -52,7 +88,7 @@ const Project = () => {
                     <div class="card-body">
                         <h5 class="card-title text-dark">Get All Project</h5>
                         <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <button type="button" class="btn btn-primary" >getAll</button>
+                        <button type="button" class="btn btn-primary"onClick={viewProject} >View All</button>
                     </div>
                 </div>
             </div>

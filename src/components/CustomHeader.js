@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
 import AdminDashboard from './admin/AdminDashboard';
+import Staff from './admin/Staff';
+import StaffDashboard from './staff/StaffDashboard';
  
 const CustomHeader = () => {
     
@@ -37,7 +39,8 @@ const CustomHeader = () => {
                 </nav>
                 
             </header>
-            <AdminDashboard />
+            {/* <AdminDashboard /> */}
+            {/* <StaffDashboard/> */}
         </div>
     );
  

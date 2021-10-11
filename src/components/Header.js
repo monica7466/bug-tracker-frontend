@@ -17,6 +17,7 @@ const Header = () => {
                             <span className="navbar-toggler-icon"></span>
                         </button>
                         <div className="collapse navbar-collapse navbar-dark" id="navbarResponsive">
+                            
                             <ul className="navbar-nav ml-auto">
                                 
                         <li className="nav-item">
@@ -39,14 +40,12 @@ const Header = () => {
                                     {/* align right this item  */}
                                     <Link className="nav-link" to="/register">Register</Link>
                                 </li>
-
-
                             </ul>
                         </div>
                     </div>
                 </nav>
             </header>
-            <AdminDashboard />
+            {/* <AdminDashboard /> */}
         </div>
     );
 
