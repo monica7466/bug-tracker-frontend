@@ -33,6 +33,9 @@ import UpdateProject from './components/admin/UpdateProject';
 import DeleteProject from './components/admin/DeleteProject';
 import AddStaff from './components/admin/AddStaff';
 import GetAllStaff from './components/admin/GetAllStaff';
+import AddReport from './components/staff/AddReport';
+import DeleteReport from './components/staff/DeleteReport';
+import GetAllReport from './components/staff/GetAllReport';
 const Routes = () => {
     return(
         <div>
@@ -75,6 +78,9 @@ const Routes = () => {
                             <Route path="/messages"><Messages/></Route>
                             {/* <Route path="/customHeader"><CustomHeader/></Route> */}
                             <Route path="/projectReport"><ProjectReport/></Route>
+                            <Route path="/addReport"><AddReport/></Route>
+                            <Route path="/deleteReport"><DeleteReport/></Route>
+                            <Route path="/getAllReport"><GetAllReport/></Route>
                             <Route path="/staffDashboard"><StaffDashboard/></Route>
                             <Route path="/userDashboard"><UserDashboard/></Route>
                             <Route path="/addProject"><AddProject/></Route>

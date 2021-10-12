@@ -29,7 +29,7 @@ const GetAllStaff = (props) => {
     const handleOneStaffData = (evt) => {
         console.log("handleOneStaffData", evt.target.name, evt.target.value);
         setOneStaff({
-            ...stafft,
+            ...staff,
             [evt.target.name]: evt.target.value
         });
     }
@@ -38,7 +38,7 @@ const GetAllStaff = (props) => {
 
 
     const viewStaff = (evt) => {
-        axios.get('http://localhost:8080/Staff/getAllStaff')
+        axios.get('http://localhost:8082/Staff/getAllStaff')
             .then((response) => {
                 setStaffList(response.data);
             }).catch(error => {
@@ -76,15 +76,15 @@ const GetAllStaff = (props) => {
                         </thead>
                         <tbody>
                         <tr>
-                        {projectList.map((p, k) => {
+                        {staffList.map((p, k) => {
                             console.log(p);
                             return (
         
                                 <div k={k}>
                                     
-                                    <th scope="row">{S.StaffID}</th>
-                                    <td>{S.UserName}</td>
-                                    <td>{S.StaffPassword}</td>
+                                    <th scope="row">{p.StaffID}</th>
+                                    <td>{p.UserName}</td>
+                                    <td>{p.StaffPassword}</td>
                                     
                                       </div>
                                

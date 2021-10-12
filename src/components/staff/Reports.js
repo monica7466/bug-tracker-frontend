@@ -1,9 +1,31 @@
 import React from 'react';
-// import AdminDashboard from './AdminDashboard';
+import { useHistory } from 'react-router';
 
 
 const Reports = () => {
 
+    const history = useHistory();
+    const submitReportData = (event) => {
+
+
+        history.push('/addReport');
+
+        event.preventDefault();
+    }
+    const deleteReport = (event) => {
+
+
+        history.push('/deleteReport');
+
+        event.preventDefault();
+    }
+    const viewReport = (event) => {
+
+
+        history.push('/getAllReport');
+
+        event.preventDefault();
+    }
     return (
         <div>
             <div>
@@ -19,7 +41,7 @@ const Reports = () => {
                         <h5 class="card-title text-dark">Add Reports</h5>
                         <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
-                        <button type="button" class="btn btn-primary" >Add</button>
+                        <button type="button" class="btn btn-primary" onClick={submitReportData}>Add</button>
                     </div>
                 </div>
                 <div class="card" style={{ width: "18rem" }}>
@@ -43,7 +65,7 @@ const Reports = () => {
                     <div class="card-body">
                         <h5 class="card-title text-dark">Delete Reports</h5>
                         <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <button type="button" class="btn btn-primary" >Delete</button>
+                        <button type="button" class="btn btn-primary" onClick={deleteReport}>Delete</button>
                     </div>
                 </div>
                 <div class="card" style={{ width: "18rem" }}>
@@ -51,7 +73,7 @@ const Reports = () => {
                     <div class="card-body">
                         <h5 class="card-title text-dark">Get all Reports</h5>
                         <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <button type="button" class="btn btn-primary" >GetAll</button>
+                        <button type="button" class="btn btn-primary" onClick={viewReport}>GetAll</button>
                     </div>
                 </div>
             </div>
