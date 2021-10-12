@@ -41,6 +41,7 @@ import UpdateReport from './components/staff/UpdateReport';
 import DeleteBug from './components/Users/DeleteBug';
 import UpdateBug from './components/Users/UpdateBug';
 import SearchReportById from './components/Users/SearchReportById';
+import SearchBug from './components/Users/SearchBug';
 const Routes = () => {
     return(
         <div>
@@ -112,6 +113,7 @@ const Routes = () => {
                             <Route path="/deleteOneBug"><DeleteBug/></Route>
                             <Route path="/updateBug"><UpdateBug/></Route>
                             <Route path="/searchReportById"><SearchReportById /></Route>
+                            <Route path="/searchBug"><SearchBug/></Route>
                     </Switch>
                     </div>
                 </div>

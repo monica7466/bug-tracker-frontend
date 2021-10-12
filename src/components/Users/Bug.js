@@ -24,7 +24,13 @@ const Bug = () => {
 
         event.preventDefault();
     }
+    const searchBugs = (event) => {
 
+
+        history.push('/searchBug');
+
+        event.preventDefault();
+    }
     return (
         <div>
         <div>
@@ -56,7 +62,7 @@ const Bug = () => {
                 <div class="card-body">
                     <h5 class="card-title text-dark">Search Bug</h5>
                     <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button type="button" class="btn btn-primary" >Search</button>
+                    <button type="button" class="btn btn-primary" onClick={searchBugs}>Search</button>
                 </div>
             </div>
             <div class="card" style={{ width: "18rem" }}>
