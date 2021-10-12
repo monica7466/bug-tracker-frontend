@@ -60,7 +60,7 @@ const GetAllStaff = (props) => {
                         id="submit"
                         name="submit"
                         className="btn btn-primary mb-3"
-                        value="Get All Stafft"
+                        value="Get All Staff"
                         onClick={viewStaff}
                     />
                 </div>

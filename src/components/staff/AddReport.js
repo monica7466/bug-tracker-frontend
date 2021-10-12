@@ -132,7 +132,7 @@ const AddReport = (props) => {
     return (
         <div className="container" >
             <div>
-                <p>Add a Message</p>
+                <p>Add a REPORT</p>
                 <form className="form form-group row" onSubmit={submitReportData} >
                     <div>
                     <input

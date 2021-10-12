@@ -26,6 +26,20 @@ const Reports = () => {
 
         event.preventDefault();
     }
+    const handleReporttData = (event) => {
+
+
+        history.push('/searchReport');
+
+        event.preventDefault();
+    }
+    const updateReportDetails = (event) => {
+
+
+        history.push('/updateReport');
+
+        event.preventDefault();
+    }
     return (
         <div>
             <div>
@@ -49,7 +63,7 @@ const Reports = () => {
                     <div class="card-body">
                         <h5 class="card-title text-dark">Update Reports</h5>
                         <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <button type="button" class="btn btn-primary" >Update</button>
+                        <button type="button" class="btn btn-primary" onClick={updateReportDetails}>Update</button>
                     </div>
                 </div>
                 <div class="card" style={{ width: "18rem" }}>
@@ -57,7 +71,7 @@ const Reports = () => {
                     <div class="card-body">
                         <h5 class="card-title text-dark">Search Reports</h5>
                         <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <button type="button" class="btn btn-primary" >Search</button>
+                        <button type="button" class="btn btn-primary" onClick={handleReporttData}>Search</button>
                     </div>
                 </div>
                 <div class="card" style={{ width: "18rem" }}>

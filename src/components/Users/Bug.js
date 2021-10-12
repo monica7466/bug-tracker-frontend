@@ -1,8 +1,29 @@
 import React from 'react';
-
+import { useHistory } from 'react-router';
 
 const Bug = () => {
+    const history = useHistory();
+    const submitAddBug = (event) => {
 
+
+        history.push('/addBug');
+
+        event.preventDefault();
+    }
+    const deleteBug = (event) => {
+
+
+        history.push('/deleteOneBug');
+
+        event.preventDefault();
+    }
+    const handleBugData = (event) => {
+
+
+        history.push('/updateBug');
+
+        event.preventDefault();
+    }
     return (
         <div>
         <div>
@@ -18,7 +39,7 @@ const Bug = () => {
                     <h5 class="card-title text-dark">Add Bugs</h5>
                     <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
-                    <button type="button" class="btn btn-primary" >Add</button>
+                    <button type="button" class="btn btn-primary" onClick={submitAddBug}>Add</button>
                 </div>
             </div>
             <div class="card" style={{ width: "18rem" }}>
@@ -26,7 +47,7 @@ const Bug = () => {
                 <div class="card-body">
                     <h5 class="card-title text-dark">Update Bug</h5>
                     <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button type="button" class="btn btn-primary" >Update</button>
+                    <button type="button" class="btn btn-primary" onClick={handleBugData}>Update</button>
                 </div>
             </div>
             <div class="card" style={{ width: "18rem" }}>
@@ -42,7 +63,7 @@ const Bug = () => {
                 <div class="card-body">
                     <h5 class="card-title text-dark">Delete Bug</h5>
                     <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button type="button" class="btn btn-primary" >Delete</button>
+                    <button type="button" class="btn btn-primary" onClick={deleteBug}>Delete</button>
                 </div>
             </div>
         </div>

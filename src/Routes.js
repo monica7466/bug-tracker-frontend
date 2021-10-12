@@ -36,6 +36,10 @@ import GetAllStaff from './components/admin/GetAllStaff';
 import AddReport from './components/staff/AddReport';
 import DeleteReport from './components/staff/DeleteReport';
 import GetAllReport from './components/staff/GetAllReport';
+import SearchReport from './components/staff/SearchReport';
+import UpdateReport from './components/staff/UpdateReport';
+import DeleteBug from './components/Users/DeleteBug';
+import UpdateBug from './components/Users/UpdateBug';
 const Routes = () => {
     return(
         <div>
@@ -81,6 +85,8 @@ const Routes = () => {
                             <Route path="/addReport"><AddReport/></Route>
                             <Route path="/deleteReport"><DeleteReport/></Route>
                             <Route path="/getAllReport"><GetAllReport/></Route>
+                            <Route path="/updateReport"><UpdateReport/></Route>                     
+                            <Route path="/searchReport"><SearchReport/></Route>
                             <Route path="/staffDashboard"><StaffDashboard/></Route>
                             <Route path="/userDashboard"><UserDashboard/></Route>
                             <Route path="/addProject"><AddProject/></Route>
@@ -101,6 +107,9 @@ const Routes = () => {
                             <Route path="/addMessage"><AddMessage/></Route>
                             <Route path="/deleteStaff"><DeleteStaff/></Route>
                             <Route path="/SearchStaffById"><SearchStaffById/></Route>
+                            <Route path="/addBug"><AddBug/></Route>
+                            <Route path="/deleteOneBug"><DeleteBug/></Route>
+                            <Route path="/updateBug"><UpdateBug/></Route>
                     </Switch>
                     </div>
                 </div>
