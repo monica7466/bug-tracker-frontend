@@ -75,7 +75,7 @@ const GetAllBug = (props) => {
                     />
                 </div>
                 <div className="Container text-left">
-                    <table class="table table-hover table-dark">
+                    <table class="table table-hover  table-light table-striped">
                         <thead>
                             <tr>
                                 <th scope="col">BUG ID</th>
@@ -87,12 +87,12 @@ const GetAllBug = (props) => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            
                                 {bugList.map((b, k) => {
                                     console.log(b);
                                     return (
 
-                                        <div k={k}>
+                                        <tr k={k}>
 
                                             <th scope="row">{b.bugId}</th>
                                             <td>{b.bugName}</td>
@@ -100,11 +100,11 @@ const GetAllBug = (props) => {
                                             <td>{b.description}</td>
                                             <td>{b.users.userId}</td>
 
-                                        </div>
+                                            </tr>
 
                                     )
                                 })}
-                            </tr>
+                            
                         </tbody>
                     </table>
                 </div>

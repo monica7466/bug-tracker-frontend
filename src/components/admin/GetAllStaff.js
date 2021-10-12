@@ -65,7 +65,7 @@ const GetAllStaff = (props) => {
                     />
                 </div>
                 <div className="Container text-left">
-                    <table class="table table-hover table-dark">
+                    <table class="table table-hover table-secondary table-striped">
                         <thead>
                             <tr>
                                 <th scope="col">Staff ID</th>
@@ -75,18 +75,18 @@ const GetAllStaff = (props) => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            
                                 {staffList.map((p, k) => {
                                     console.log(p);
                                     return (
-                                        <div k={k}>
+                                        <tr k={k}>
                                             <th scope="row">{p.staffId}</th>
                                             <td>{p.userName}</td>
-                                        </div>
+                                            </tr>
 
                                     )
                                 })}
-                            </tr>
+                            
                         </tbody>
                     </table>
                 </div>

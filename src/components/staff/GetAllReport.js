@@ -2,26 +2,26 @@ import axios from 'axios';
 import React, { useState } from 'react';
 
 
- 
+
 const GetAllReport = () => {
- 
+
     const [reportList, setReportList] = useState([]);
     const [report, setReport] = useState({
-        reportId:0,
+        reportId: 0,
         solutionDescription: '',
         status: '',
         project: {
-            projectId:0,
+            projectId: 0,
             projectName: '',
             bugId: 0,
             startDateOfProject: '',
-            endDateOfProject:'',
+            endDateOfProject: '',
             staffId: 0,
             projectPriority: 0
         }
-        
+
     });
-    
+
     const viewReport = (evt) => {
         axios.get('http://localhost:8082/Report/getAllReports')
             .then((response) => {
@@ -32,13 +32,13 @@ const GetAllReport = () => {
             });
         evt.preventDefault();
     }
- 
+
     return (
         <div className="container" >
-            
+
             <title>Get All Reports</title>
             <h1>View Report Details</h1>
- 
+
             <div>
                 <div>
                     <input
@@ -51,38 +51,36 @@ const GetAllReport = () => {
                     />
                 </div>
                 <div className="Container text-left">
-                    <table class="table table-hover table-dark">
+                    <table class="table table-hover table-secondary table-striped">
                         <thead>
                             <tr>
                                 <th scope="col">REPORT ID</th>
                                 <th scope="col">SOLUTION DESCRIPTION</th>
                                 <th scope="col">STATUS</th>
                                 <th scope="col">PROJECT ID</th>
- 
+
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            
                                 {reportList.map((r, k) => {
                                     console.log(r);
                                     return (
- 
-                                        <div k={k}>
- 
-                                            <th scope="row">{r.reportId}</th>
+
+                                        <tr kh={k}>
+
+                                            <td scope="row">{r.reportId}</td>
                                             <td>{r.solutionDescription}</td>
                                             <td>{r.status}</td>
                                             <td>{r.getData}</td>
- 
-                                        </div>
- 
+                                        </tr>
+
                                     )
                                 })}
-                            </tr>
                         </tbody>
                     </table>
                 </div>
- 
+
             </div>
         </div >
     );

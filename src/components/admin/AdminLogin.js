@@ -1,93 +1,94 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import axios from "axios";
-// import Dashboard from './Dashboard';
 
-const AdminLogin = (props) => {
+
+
+
+
+
+const AdminLogin = () => {
 
     const history = useHistory();
 
-    const [AppUser, setAppUser] = useState({
-        userId: '',
-        password: ''
+
+    const [oneAdmin, setOneAdmin] = useState({
+        adminId: 0,
+       // employeeName: '',
+       adminName:'',
+        adminPassword: ''
     });
 
-    useEffect(
-        () => {
-            setAppUser({
-                userId: '',
-                password: ''
-            }
-            );
-        }, []);
-
-    const handleAppUser = (event) => {
-        console.log(event.target.value);
-        setAppUser({
-            ...AppUser,
-            [event.target.name]: event.target.value
+    const handleOneAdminData = (evt) => {
+        console.log("handleOneAdminData", evt.target.name, evt.target.value);
+        setOneAdmin({
+            ...oneAdmin,
+            [evt.target.name]: evt.target.value
         });
-    };
-
-    const submitAppUser = (event) => {
-        console.log(AppUser.userId);
-        console.log(AppUser.password);
-        // axios.post(`http://localhost:8082/appuser/login`, AppUser)
-        //     .then((response) => {
-        //         console.log(response.data);
-                    history.push('/home');
-            // }).catch((error) => {
-            //     console.log(error.message)
-            // });
-        event.preventDefault();
     }
+
+    const onSubmit = (evt) => {
+
+        axios.post('http://localhost:8082/AdminLogin',oneAdmin)
+            .then(async(response) => {
+                setOneAdmin(response.data);
+                alert("Admin logged in successfully!");
+                history.push('/adminDashboard');
+            }).catch(error => {
+                console.log(error.message)
+                alert("Admin does not exist!");
+            });
+        evt.preventDefault();
+    }
+
+    
+
+
     return (
         <div className="container">
-            <h1 className="display-4 text-primary">Admin Login</h1>
-            <div>
-                <form className="form form-group form-dark row mt-3 ml-5" onSubmit={submitAppUser}>
-                    <div className="mb-3">
-                        <input
-                            type="text"
-                            className="form-control"
-                            name="username"
-                            id="username"
-                            // Add data-testid here : jest-test  
-                            data-testid="username"
+            <title>Admin Login</title>
+            <div class="card" style={{ width: "18rem" }}  className="container">
+            <div class="card-body">
+            <form>
+                <h3>Admin Login</h3>
+
+                <div className="form-group">
+                    <label>Admin Name</label>
+                    <input type="number"
+                            id="adminId"
+                            name="adminId"
                             className="form-control mb-3"
-                            placeholder="User ID"
-                            //value={AppUser.userId}
-                            onChange={handleAppUser}
-                            required
-                        />
-                        <input
-                            type="password"
-                            className="form-control"
-                            name="password"
-                            id="password"
-                            // Add data-testid here : jest-test  
-                            data-testid="password"
+                            // value={oneAdmin.adminName}
+                            onChange={handleOneAdminData}
+                            placeholder="Enter username" />
+                </div>
+
+                <div className="form-group">
+                    <label>Password</label>
+                    <input type="password"
+                            id="adminPassword"
+                            name="adminPassword"
+                            // pattern="^[a-zA-Z0-9]+$"
                             className="form-control mb-3"
-                            placeholder="Password"
-                            value={AppUser.password}
-                            onChange={handleAppUser} />
-                            required
-                        <input
-                            type="submit"
-                            id="submit"
-                            // Add data-testid here : jest-test  
-                            data-testid="submit"
-                            name="submit"
-                            className="form-control btn btn-primary mb-3"
-                            value="Login"
-                            onClick={submitAppUser}
-                        />
+                            // value={oneAdmin.adminPassword}
+                            onChange={handleOneAdminData}
+                            placeholder="Enter Password" />
+                </div>
+
+                <div className="form-group">
+                    <div className="custom-control custom-checkbox">
+                        <input type="checkbox" className="custom-control-input" id="customCheck1" />
                     </div>
-                </form>
+                </div>
+
+                <button type="submit" className="btn btn-primary btn-block" onClick={onSubmit}>Submit</button>
+
+
+            </form>
             </div>
-            {/* <Dashboard/> */}
-        </div >
-    )
+            </div>
+        </div>
+    );
 }
+
 export default AdminLogin;

@@ -73,7 +73,7 @@ const SearchBug = () => {
                             />
                         </div>
                     </form>
-                    <table class="table table-hover table-dark">
+                    <table class="table table-hover table-secondary table-striped">
                         <thead>
                             <tr>
                                 <th scope="col">Bug ID</th>

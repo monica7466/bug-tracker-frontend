@@ -45,8 +45,10 @@ const AddProject = (props) => {
         axios.post('http://localhost:8082/Project/addProject', project)
             .then((response) => {
                 setOneProject(response.data);
+                alert('Project added successfully!')
             }).catch(error => {
                 console.log(error.message);
+                alert('Enter correct details!')
             });
         evt.preventDefault();
     }

@@ -67,7 +67,8 @@ const SearchReportById = () => {
                         />
                     </div>
                 </form>
-                <table class="table table-hover table-dark">
+            </div>
+                <table class="table table-hover table-secondary table-striped ml-auto mr-auto">
                     <thead>
                         <tr>
                         <th scope="col">PROJECT ID</th>
@@ -90,7 +91,6 @@ const SearchReportById = () => {
                 </table>
                              
                 <p><br/><br/></p>
-            </div>
             </div>
                 <p><br/><br/></p>
         </div>

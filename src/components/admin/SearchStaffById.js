@@ -72,7 +72,7 @@ const SearchStaffById = () => {
                     </div>
                 </form>
                 {/* <p> {emp.employee.employeeId} <br />{emp.employee.employeeName} <br />{emp.month}<br />{emp.year}<br />{emp.salary} </p> */}
-                <table class="table table-hover table-dark">
+                <table class="table table-hover table-secondary table-striped">
                     <thead>
                         <tr>
                             <th scope="col">Staff ID</th>

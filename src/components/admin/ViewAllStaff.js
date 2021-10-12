@@ -66,7 +66,7 @@ const ViewAllStaff = (props) => {
                     />
                 </div>
                 <div className="Container text-left">
-                    <table class="table table-hover table-dark">
+                    <table class="table table-hover table-secondary table-striped">
                         <thead>
                             <tr>
                                 <th scope="col">Staff ID</th>
@@ -74,21 +74,21 @@ const ViewAllStaff = (props) => {
                             </tr>
                         </thead>
                         <tbody>
-                        <tr>
+                       
                         {staffList.map((s, k) => {
                             console.log(s);
                             return (
         
-                                <div k={k}>
+                                <tr k={k}>
                                     
                                     <th scope="row">{s.staffId}</th>
                                     <td>{s.userName}</td>
                                         
-                                 </div>
+                                    </tr>
                                
                             )
                         })}
-                         </tr>
+                         
                         </tbody>
                     </table>
                 </div>

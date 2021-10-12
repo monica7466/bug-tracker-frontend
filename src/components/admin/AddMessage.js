@@ -37,8 +37,10 @@ const AddMessage = (props) => {
         axios.post('http://localhost:8082/message/addMessage', msg)
             .then((response) => {
                 setOneMsg(response.data);
+                alert('Message sent!')
             }).catch(error => {
                 console.log(error.message);
+                alert('Please enter valid user ID!')
             });
         evt.preventDefault();
     }

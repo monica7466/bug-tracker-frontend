@@ -73,7 +73,7 @@ const SearchProject = () => {
                         />
                     </div>
                 </form>
-                <table class="table table-hover table-dark">
+                <table class="table table-hover table-secondary table-striped">
                     <thead>
                         <tr>
                         <th scope="col">Project ID</th>
@@ -86,11 +86,11 @@ const SearchProject = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        
                         {projectList.map((p, k) => {
                             console.log(p);
                             return (
-                                <div k={k}>
+                                <tr k={k}>
                                     <th scope="row">{p.projectID}</th>
                                     <td>{p.projectName}</td>
                                     <td>{p.bugId}</td>
@@ -98,11 +98,11 @@ const SearchProject = () => {
                                     <td>{p.endDateOfProject}</td>
                                     <td>{p.staffId}</td>
                                     <td>{p.projectPriority}</td>                 
-                                 </div>
+                                    </tr>
                                
                             )
                         })}
-                        </tr>
+                        
                     </tbody>
                 </table>
                 <p><br/><br/></p>

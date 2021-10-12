@@ -73,7 +73,7 @@ const GetAllProject = (props) => {
                     />
                 </div>
                 <div className="Container text-left">
-                    <table class="table table-hover table-dark">
+                    <table class="table table-hover table-secondary table-striped">
                         <thead>
                             <tr>
                                 <th scope="col">Project ID</th>
@@ -86,12 +86,12 @@ const GetAllProject = (props) => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            
                                 {projectList.map((p, k) => {
                                     console.log(p);
                                     return (
 
-                                        <div k={k}>
+                                        <tr k={k}>
 
                                             <th scope="row">{p.projectID}</th>
                                             <td>{p.projectName}</td>
@@ -101,11 +101,11 @@ const GetAllProject = (props) => {
                                             <td>{p.staffId}</td>
                                             <td>{p.projectPriority}</td>
 
-                                        </div>
+                                            </tr>
 
                                     )
                                 })}
-                            </tr>
+                           
                         </tbody>
                     </table>
                 </div>

@@ -70,7 +70,8 @@ const Routes = () => {
                     </div>
                     </div> */}
                 <div>
-                   <Header/>
+                   {/* <Header/> */}
+                   <CustomHeader/>
                     <div>
                     <Switch>
                            <Route exact path="/"> <Home /> </Route>

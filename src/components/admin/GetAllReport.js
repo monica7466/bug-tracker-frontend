@@ -67,7 +67,7 @@ const GetAllReport = (props) => {
                     />
                 </div>
                 <div className="Container text-left">
-                    <table class="table table-hover table-dark">
+                    <table class="table table-hover table-secondary table-striped">
                         <thead>
                             <tr>
 
@@ -79,23 +79,23 @@ const GetAllReport = (props) => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            
                                 {bugList.map((r, k) => {
                                     console.log(r);
                                     return (
 
-                                        <div k={k}>
+                                        <tr k={k}>
 
                                             <th scope="row">{r.reportId}</th>
                                             <td>{r.solutionDescription}</td>
                                             <td>{r.status}</td>
                                             <td>{r.project}</td>
 
-                                        </div>
+                                            </tr>
 
                                     )
                                 })}
-                            </tr>
+                            
                         </tbody>
                     </table>
                 </div>

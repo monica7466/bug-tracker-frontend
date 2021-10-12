@@ -31,7 +31,6 @@ const LoginPage = () => {
         <div className = "container">
             <h1 className="font2">Login</h1>
              
-            <p className="display-8 text-primary">Please Login</p>
             <button type="button" class="btn btn-primary btn-lg btn-block" onClick={AdminLogin}>ADMIN</button>
             <button type="button" class="btn btn-primary btn-lg btn-block" onClick={StaffLogin}>STAFF</button>
             <button type="button" class="btn btn-primary btn-lg btn-block" onClick={UserLogin}>USER</button>
