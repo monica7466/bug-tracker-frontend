@@ -1,7 +1,26 @@
 import React from 'react';
+import { useHistory } from 'react-router';
 
 const Bugs = () => {
 
+    
+    const history = useHistory();
+
+    const viewBug = (event) => {
+
+
+        history.push('/getAllBug');
+
+        event.preventDefault();
+    }
+    const searchBugs = (event) => {
+
+
+        history.push('/searchBug');
+
+        event.preventDefault();
+    }
+    console.log("Bugs component");
     return (
         <div>
             <div>
@@ -16,7 +35,7 @@ const Bugs = () => {
                         <img src="https://bit.ly/3oLC3j4" class="card-img-top" alt="..." />
                         <h5 class="card-title text-dark">Search Bug</h5>
                         <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <button type="button" class="btn btn-primary" >Search</button>
+                        <button type="button" class="btn btn-primary" onClick={searchBugs}>Search</button>
                     </div>
                 </div>
                 <div class="card" style={{ width: "22rem" }}>
@@ -25,7 +44,7 @@ const Bugs = () => {
                         <h5 class="card-title text-dark">Get All Bug</h5>
                         <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
-                        <button type="button" class="btn btn-primary" >GetAll</button>
+                        <button type="button" class="btn btn-primary" onClick={viewBug}>GetAll</button>
                     </div>
                 </div>
                 

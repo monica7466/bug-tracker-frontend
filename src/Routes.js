@@ -42,6 +42,11 @@ import DeleteBug from './components/Users/DeleteBug';
 import UpdateBug from './components/Users/UpdateBug';
 import SearchReportById from './components/Users/SearchReportById';
 import SearchBug from './components/Users/SearchBug';
+import AdminLogin from './components/admin/AdminLogin';
+import StaffLogin from './components/staff/StaffLogin';
+import UserLogin from './components/Users/UserLogin';
+import UserRegister from './components/Users/UserRegister';
+import GetAllBug from './components/admin/GetAllBug';
 const Routes = () => {
     return(
         <div>
@@ -100,7 +105,8 @@ const Routes = () => {
                             <Route path="/getAllStaff"><GetAllStaff/></Route>
                             <Route path="/adminDashboard"><AdminDashboard/></Route>
                             <Route path="/about"><AboutUs/></Route>
-                            <Route path="/adminDashboard/bugs"><Bugs/></Route>
+                            <Route path="/bugs"><Bugs/></Route>                 
+                            {/* <Route path="/adminDashboard/bugs"><Bugs/></Route> */}
                             <Route path="/message"><Message/></Route>
                             <Route path="/staff"><Staff/></Route>
                             <Route path="/project"><Project/></Route>
@@ -114,6 +120,12 @@ const Routes = () => {
                             <Route path="/updateBug"><UpdateBug/></Route>
                             <Route path="/searchReportById"><SearchReportById /></Route>
                             <Route path="/searchBug"><SearchBug/></Route>
+                            <Route path="/adminLogin"> <AdminLogin /> </Route>
+                            <Route path="/staffLogin"> <StaffLogin /> </Route>
+                            <Route path="/userLogin"> <UserLogin /> </Route>
+                            <Route path="/userRegister"> <UserRegister /> </Route>
+                            <Route path="/getAllReport"><GetAllReport/></Route>
+                            <Route path="/getAllBug"><GetAllBug/></Route>
                     </Switch>
                     </div>
                 </div>

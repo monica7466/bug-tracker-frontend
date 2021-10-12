@@ -1,9 +1,18 @@
 import React from 'react';
-import AdminDashboard from './AdminDashboard';
+import { useHistory } from 'react-router';
 
 
 const Report = () => {
 
+    const history = useHistory();
+
+    const viewReport = (event) => {
+
+
+        history.push('/getAllReport');
+
+        event.preventDefault();
+    }
     return (
         <div>
             <div>
@@ -19,7 +28,7 @@ const Report = () => {
                         <h5 class="card-title text-dark">Get All Reports</h5>
                         <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
-                        <button type="button" class="btn btn-primary" >GetAll</button>
+                        <button type="button" class="btn btn-primary" onClick={viewReport}>GetAll</button>
                     </div>
                 </div>
                 </div>

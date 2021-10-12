@@ -38,6 +38,18 @@
   background-repeat:space;
   background-position: 'center', 
 }
+
+.mdb-navbar1 {
+  background-image: url('./Assest/images.jpg');
+  height: 100%;
+  align-items: center;
+  text-align: center;
+  background-size: cover;
+  background-repeat:space;
+  background-position: 'center', 
+}
+
+
 .about-style{
   background-image: url('./Assest/backgd1.png');
   padding: auto;
@@ -76,52 +88,6 @@
   height: 70vh;
   overflow-y: auto;
 }
-.button1{
-  margin-left: 500px;
-  margin-top: 152px;
-  height: 94px;
-  width: 174px;
-  color: white;
-  background: brown;
-}
-
-.button2{
-  margin-left: 350px;
-  margin-top: 152px;
-  height: 94px;
-  width: 174px;
-  color: white;
-  background: darkgreen;
-}
-.button3{
-  margin-top: 342px;
-  margin-left: 57px;
-  height: 94px;
-  width: 174px;
-  color: black;
-  background: orange;
-}
-
-.button4{
-  margin-left: 780px;
-  margin-top: -94px;
-  /* margin-bottom: 300px; */
-  height: 94px;
-  width: 174px;
-  color: white;
-  background: rgb(90, 2, 90);
-}
-
-.button5{
-  margin-top: -94px;
-  margin-left: -650px;
-  /* margin-bottom: 300px; */
-  height: 94px;
-  width: 174px;
-  color: black;
-  background: darkgrey;
-}
-
 
 .align {
   padding: 100px;
@@ -142,6 +108,31 @@
   width: 202vh;
   font-size: 24px;
   color: white;
+}
+
+.font{
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: xx-large;
+  color: blue;
+  margin-left: 500px;
+  margin-bottom: 50px;
+}
+
+.font2{
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: xx-large;
+  color: black;
+  margin-top: 50px;
+  margin-left: 500px;
+  margin-bottom: 70px;
+}
+
+.font1{
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: xx-large;
+  color: blue;
+  margin-left: 250px;
+  margin-bottom: 50px;
 }
  
 @keyframes App-logo-spin {

@@ -95,7 +95,9 @@ const AddReport = (props) => {
         reportId: 0,
         solutionDescription:'',
         status: '',
-        project:0
+        project: {
+            projectId:0
+        }
     });
 
     const [oneReport, setOneReport] = useState({
@@ -137,8 +139,8 @@ const AddReport = (props) => {
                     <div>
                     <input
                             type="number"
-                            id="project"
-                            name="project"
+                            id="project.projectId"
+                            name="project.projectId"
                             className="form-control mb-3"
                             placeholder="Project ID"
                             onChange={handleReportData}

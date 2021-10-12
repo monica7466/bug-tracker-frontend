@@ -7,14 +7,14 @@ const GetAllStaff = (props) => {
 
     const [staffList, setStaffList] = useState([]);
     const [staff, setStaff] = useState({
-      staffId: 0,
-      userName: '',
-      staffPassword: ''
+        staffId: 0,
+        userName: '',
+        staffPassword: ''
     });
     const [oneStaff, setOneStaff] = useState({
-      staffId: 0,
-      userName: '',
-      staffPassword: ''
+        staffId: 0,
+        userName: '',
+        staffPassword: ''
     });
 
 
@@ -70,27 +70,23 @@ const GetAllStaff = (props) => {
                             <tr>
                                 <th scope="col">Staff ID</th>
                                 <th scope="col">Staff Name</th>
-                                <th scope="col">Staff Password</th>
-                                
+
+
                             </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                        {staffList.map((p, k) => {
-                            console.log(p);
-                            return (
-        
-                                <div k={k}>
-                                    
-                                    <th scope="row">{p.StaffID}</th>
-                                    <td>{p.UserName}</td>
-                                    <td>{p.StaffPassword}</td>
-                                    
-                                      </div>
-                               
-                            )
-                        })}
-                         </tr>
+                            <tr>
+                                {staffList.map((p, k) => {
+                                    console.log(p);
+                                    return (
+                                        <div k={k}>
+                                            <th scope="row">{p.staffId}</th>
+                                            <td>{p.userName}</td>
+                                        </div>
+
+                                    )
+                                })}
+                            </tr>
                         </tbody>
                     </table>
                 </div>

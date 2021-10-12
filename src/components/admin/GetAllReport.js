@@ -1,29 +1,46 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 
- 
-const GetAllReport = () => {
- 
+
+const GetAllReport = (props) => {
+
     const [reportList, setReportList] = useState([]);
     const [report, setReport] = useState({
-        reportId:0,
+        reportId: 0,
         solutionDescription: '',
         status: '',
-        project: {
-            projectId:0,
-            projectName: '',
-            bugId: 0,
-            startDateOfProject: '',
-            endDateOfProject:'',
-            staffId: 0,
-            projectPriority: 0
-        }
-        
+        project: 0
     });
-    
+    const [oneReport, setOneReport] = useState({
+        reportId: 0,
+        solutionDescription: '',
+        status: '',
+        project: 0
+    });
+
+
+    const handleReportData = (evt) => {
+        console.log("handleReportData", evt.target.name, evt.target.value);
+        setReport({
+            ...report,
+            [evt.target.name]: evt.target.value
+        });
+    }
+
+    const handleOneReportData = (evt) => {
+        console.log("handleOneBugData", evt.target.name, evt.target.value);
+        setOneReport({
+            ...report,
+            [evt.target.name]: evt.target.value
+        });
+    }
+
+
+
+
     const viewReport = (evt) => {
-        axios.get('http://localhost:8082/Report/getAllReports')
+        axios.get('http://localhost:8082/bug/getAllbugs')
             .then((response) => {
                 setReportList(response.data);
             }).catch(error => {
@@ -32,13 +49,12 @@ const GetAllReport = () => {
             });
         evt.preventDefault();
     }
- 
+
     return (
         <div className="container" >
-            
-            <title>Get All Reports</title>
+            <title>Get All Report</title>
             <h1>View Report Details</h1>
- 
+
             <div>
                 <div>
                     <input
@@ -46,7 +62,7 @@ const GetAllReport = () => {
                         id="submit"
                         name="submit"
                         className="btn btn-primary mb-3"
-                        value="Get All Project"
+                        value="Get All Report"
                         onClick={viewReport}
                     />
                 </div>
@@ -54,35 +70,36 @@ const GetAllReport = () => {
                     <table class="table table-hover table-dark">
                         <thead>
                             <tr>
+
                                 <th scope="col">REPORT ID</th>
                                 <th scope="col">SOLUTION DESCRIPTION</th>
-                                <th scope="col">STATUS</th>
+                                <th scope="col">SRTATUS</th>
                                 <th scope="col">PROJECT ID</th>
- 
+
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                {reportList.map((r, k) => {
+                                {bugList.map((r, k) => {
                                     console.log(r);
                                     return (
- 
+
                                         <div k={k}>
- 
+
                                             <th scope="row">{r.reportId}</th>
                                             <td>{r.solutionDescription}</td>
                                             <td>{r.status}</td>
-                                            <td>{r.getData}</td>
- 
+                                            <td>{r.project}</td>
+
                                         </div>
- 
+
                                     )
                                 })}
                             </tr>
                         </tbody>
                     </table>
                 </div>
- 
+
             </div>
         </div >
     );

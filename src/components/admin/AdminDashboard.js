@@ -17,7 +17,8 @@ const AdminDashboard = () => {
         <Link className="nav-link display-5 text-light" to="/home">Message</Link> */}
          <h6 className="display-5 text-dark">Dashboard</h6>
                 <div>
-                    <Link className="nav-link display-5 text-light" to="/adminDashboard/bugs">Bugs</Link>
+                    {/* <Link className="nav-link display-5 text-light" to="/adminDashboard/bugs">Bugs</Link> */}
+                    <Link className="nav-link display-5 text-light" to="/bugs">Bugs</Link>
                 </div>
                 <div>
                     <Link className="nav-link display-5 text-light" to="/staff">Staff</Link>

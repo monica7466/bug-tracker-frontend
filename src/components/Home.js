@@ -1,4 +1,5 @@
 import React from 'react';
+import LoginPage from '../LoginPage';
 import AddBug from './AddBug';
 import AddMessage from './admin/AddMessage';
 import AddProject from './admin/AddProject';
@@ -6,13 +7,14 @@ import DeleteStaff from './admin/DeleteStaff';
 import SearchStaffById from './admin/SearchStaffById';
 import UpdateStaff from './admin/UpdateStaff';
 import ViewAllStaff from './admin/ViewAllStaff';
+import RegisterPage from './RegisterPage';
 
 const Home = () => {
 
     return (
         <div className="container">
             <h1 className="display-4 text-primary text-center">Bug Tracker</h1>
-            <div className="navbar mdb-navbar">
+            <div className="navbar mdb-navbar1">
                 {/* <AddBug/> */}
                 {/* <div class="card-columns">
                             <div class="card" style={{ width: "18rem" }}> */}
@@ -32,6 +34,8 @@ const Home = () => {
              */}
              {/* <DeleteStaff/> */}
              {/* <UpdateStaff/> */}
+             <LoginPage/>
+             <RegisterPage/>
         </div>
         </div >
     )

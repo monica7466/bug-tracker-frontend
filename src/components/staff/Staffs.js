@@ -1,9 +1,16 @@
 import React from 'react';
-import StaffDashboard from './StaffDashboard';
+import { useHistory } from 'react-router';
 
 
 const Staffs = () => {
+    const history = useHistory();
+    const submitViewStaff = (event) => {
 
+
+        history.push('/getAllStaff');
+
+        event.preventDefault();
+    }
     return (
         <div>
             <div>
@@ -19,7 +26,7 @@ const Staffs = () => {
                         <h5 class="card-title text-dark">View All Staff</h5>
                         <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
-                        <button type="button" class="btn btn-primary" >View All</button>
+                        <button type="button" class="btn btn-primary" onClick={submitViewStaff}>View All</button>
                     </div>
                 </div>
                 </div>
