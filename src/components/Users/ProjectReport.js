@@ -1,8 +1,15 @@
 import React from 'react';
-
+import { useHistory } from 'react-router';
 
 const ProjectReport = () => {
+    const history = useHistory();
+    const SearchReports = (event) => {
 
+
+        history.push('/searchReportById');
+
+        event.preventDefault();
+    }
     return (
         <div>
             <div>
@@ -18,7 +25,7 @@ const ProjectReport = () => {
                         <h5 class="card-title text-dark">Search Report</h5>
                         <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
-                        <button type="button" class="btn btn-primary" >Search</button>
+                        <button type="button" class="btn btn-primary" onClick={SearchReports}>Search</button>
                     </div>
                 </div>
                 
