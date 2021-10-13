@@ -48,7 +48,7 @@
 // export default CustomHeader;
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link,NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import '../App.css';
 
@@ -56,8 +56,9 @@ const CustomHeader = () => {
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     useEffect(() => {
+        
         if (isLoggedIn); // use localStorage here 
-        setIsLoggedIn(true);
+        setIsLoggedIn(false);
     }, []);
 
     if (isLoggedIn) {
@@ -96,7 +97,7 @@ const CustomHeader = () => {
     else {
         return (
             <header class="header sticky-top">
-                <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark bg-dark">
+                <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark bg-primary">
                     <div class="container">
                         <Link className="navbar-brand" to="/home">
                             <img src="https://www.pikpng.com/pngl/b/140-1404779_tracking-and-fixing-bugs-is-no-more-a.png"
@@ -120,6 +121,9 @@ const CustomHeader = () => {
                                 <li className="nav-item align-end">
                                     <Link className="nav-link" to="/contact">Contact</Link>
                                 </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/home">Logout</Link>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -132,3 +136,38 @@ const CustomHeader = () => {
 
 }
 export default CustomHeader;
+
+// class CustomHeader extends React.Component {  
+//     componentWillMount() {
+//       if (sessionStorage.getItem('jwt'))
+//         this.props.loginSuccess();
+//     }
+  
+//     render() {
+//       console.log("logged_in: ", this.props.logged_in);
+  
+//       if (this.props.logged_in) {
+//         return (
+//           <nav>
+//             <NavLink to="/" 
+//               activeClassName="active">Home</NavLink>
+//             {" | "}
+//             <Link to="/products" activeClassName="active">Products</Link>
+//             {" | "}
+//             <a href="/logout">log out</a>
+//           </nav>
+//         );
+//       } else {
+//         return (
+//           <nav>
+//             <NavLink to="/" 
+//               activeClassName="active">Home</NavLink>
+//             {" | "}
+//             <Link to="/userLogin" activeClassName="active">
+//               log in</Link>
+//           </nav>
+//         );
+//       }
+//     }
+//   }
+//   export default CustomHeader;

@@ -6,13 +6,13 @@ const AddProject = (props) => {
 
     const [projectList, setProjectList] = useState([]);
     const [project, setProject] = useState({
-      projectID: 0,
-      projectName: '',
-      bugId:0,
-      startDateOfProject: '',
-      endDateOfProject: '',
-      staffId: 0,
-      projectPriority: 0
+        projectID: 0,
+        projectName: '',
+        bugId:0,
+        startDateOfProject: '',
+        endDateOfProject: '',
+        staffId: 0,
+        projectPriority: 0
     });
     const [oneProject, setOneProject] = useState({
       projectID: 0,
@@ -30,15 +30,8 @@ const AddProject = (props) => {
             ...project,
             [evt.target.name]: evt.target.value
         });
+        evt.preventDefault();
     }
-
-    // const handleOneProjectData = (evt) => {
-    //     console.log("handleOneProjectData", evt.target.name, evt.target.value);
-    //     setOneProject({
-    //         ...project,
-    //         [evt.target.name]: evt.target.value
-    //     });
-    // }
 
     const submitAddProject = (evt) => {
         console.log("submitProjectData");
@@ -100,8 +93,8 @@ const AddProject = (props) => {
                         <p>END DATE OF PROJECT</p>
                         <input
                             type="date"
-                            id="endDateOfProjectt"
-                            name="endDateOfProjectt"
+                            id="endDateOfProject"
+                            name="endDateOfProject"
                             className="form-control mb-3"
                             placeholder="End Date Of Projectt"
                             onChange={handleProjectData}
@@ -119,7 +112,7 @@ const AddProject = (props) => {
                         <input
                             type="number"
                             id="projectPriority"
-                            name="projectPriorityy"
+                            name="projectPriority"
                             className="form-control mb-3"
                             placeholder="Project Priority"
                             onChange={handleProjectData}

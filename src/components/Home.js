@@ -1,42 +1,43 @@
 import React from 'react';
-import LoginPage from '../LoginPage';
-import AddMessage from './admin/AddMessage';
-import AddProject from './admin/AddProject';
-import DeleteStaff from './admin/DeleteStaff';
-import SearchStaffById from './admin/SearchStaffById';
-import UpdateStaff from './admin/UpdateStaff';
-import ViewAllStaff from './admin/ViewAllStaff';
-import RegisterPage from './RegisterPage';
+import slide1 from '../Assest/slide1.jpg';
+import slide2 from '../Assest/slide2.jpg';
+import slide3 from '../Assest/slide4 (1).jpeg';
+import slide4 from '../Assest/slide4 (2).jpeg';
 
 const Home = () => {
 
     return (
-        <div className="container">
+        <div className="container-fluid">
             <h1 className="display-4 text-primary text-center">Bug Tracker</h1>
-            <div className="navbar mdb-navbar1">
-                {/* <AddBug/> */}
-                {/* <div class="card-columns">
-                            <div class="card" style={{ width: "18rem" }}> */}
-                {/* <img src="https://bit.ly/2WYrYUw" class="card-img-top" alt="..." /> */}
-                {/* <div class="card-body">
-                                    <h5 class="card-title">Add Admin</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> */}
-                {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
-                {/* <button type="button" class="btn btn-primary" >Add</button>
-                                </div>
-                            </div> */}
-            {/* </div> */}
-            {/* <AddProject/> */}
-            {/* <AddMessage/> */}
-            {/* <ViewAllStaff/> */}
-            {/* <SearchStaffById />
-             */}
-             {/* <DeleteStaff/> */}
-             {/* <UpdateStaff/> */}
-             <LoginPage/>
-             <RegisterPage/>
+            <h4 className="display-4 text-dark text-center">Welcome to the system</h4>
+            <div className="border boreder-primary">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-70 car" src={slide1} alt="First slide" />
+                    </div>
+                    <div class="carousel-item">
+                        <img class="car d-block" src={slide2} alt="Second slide" />
+                    </div>
+                    <div class="carousel-item">
+                        <img class="car d-block" src={slide3} alt="Third slide" />
+                    </div>
+                    <div class="carousel-item">
+                        <img class="car d-block" src={slide4} alt="Four slide" />
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+                </div>
+            </div>
         </div>
-        </div >
+        </div>
+      
     )
 }
 
