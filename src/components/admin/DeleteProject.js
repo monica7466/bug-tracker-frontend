@@ -64,7 +64,7 @@ const DeleteProject = () => {
                                 id="projectID"
                                 name="projectID"
                                 className="form-control mb-3"
-                                // value={project.projectID}
+                                value={project.projectID}
                                 placeholder="Enter Id"
                                 onChange={handleProjectData}
                             />
