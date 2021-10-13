@@ -1,17 +1,28 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { Table } from 'react-bootstrap';
 
+ /**
+* When admin view the message and submit it then submit message data is displayed on console window.
+* Admin can also post the message with the help of URL and object to backend.
+* If staffId  from the database matches, admin will able to see the alert message in a pop-up window as 'Message sent!'
+* If staffId  from the database does not matches, admin will able to see the alert message in a pop-up window as 'Please enter valid user ID!'
+
+* @param  url  an absolute URL giving the base location from the database
+* @param  name the location of the message, relative to the url argument
+* @return     
+* @see         alert messsage
+**/
 
  
 const ViewAllStaff = (props) => {
- 
+ //Data fields for input from browser
     const [staffList, setStaffList] = useState([]);
     const [staff, setStaff] = useState({
         staffId: 0,
         userName: '',
         staffPassword: 0
     });
+    //Data fields for input from browser
     const [oneStaff, setOneStaff] = useState({
         staffId: 0,
         userName: '',
@@ -60,6 +71,7 @@ const ViewAllStaff = (props) => {
                         type="submit"
                         id="submit"
                         name="submit"
+                        data-testid="submit"
                         className="btn btn-primary mb-3"
                         value="Get All Staff"
                         onClick={submitViewStaff}

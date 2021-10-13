@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 
 
 const GetAllProject = (props) => {
-
+    //Data fields for input from browser
     const [projectList, setProjectList] = useState([]);
     const [project, setProject] = useState({
         projectID: 0,
@@ -15,6 +15,7 @@ const GetAllProject = (props) => {
         staffId: 0,
         projectPriority: 0
     });
+    //Data fields for input from browser
     const [oneProject, setOneProject] = useState({
         projectID: 0,
         projectName: '',
@@ -25,7 +26,7 @@ const GetAllProject = (props) => {
         projectPriority: 0
     });
 
-
+    // Taking current data from  browser
     const handleProjectData = (evt) => {
         console.log("handleProjectData", evt.target.name, evt.target.value);
         setProject({
@@ -33,7 +34,7 @@ const GetAllProject = (props) => {
             [evt.target.name]: evt.target.value
         });
     }
-
+    // Taking current data from  browser
     const handleOneProjectData = (evt) => {
         console.log("handleOneProjectData", evt.target.name, evt.target.value);
         setOneProject({
@@ -67,6 +68,7 @@ const GetAllProject = (props) => {
                         type="submit"
                         id="submit"
                         name="submit"
+                        data-testid="submit"
                         className="btn btn-primary mb-3"
                         value="Get All Project"
                         onClick={viewProject}
@@ -86,26 +88,26 @@ const GetAllProject = (props) => {
                             </tr>
                         </thead>
                         <tbody>
-                            
-                                {projectList.map((p, k) => {
-                                    console.log(p);
-                                    return (
 
-                                        <tr k={k}>
+                            {projectList.map((p, k) => {
+                                console.log(p);
+                                return (
 
-                                            <th scope="row">{p.projectID}</th>
-                                            <td>{p.projectName}</td>
-                                            <td>{p.bugId}</td>
-                                            <td>{p.startDateOfProject}</td>
-                                            <td>{p.endDateOfProject}</td>
-                                            <td>{p.staffId}</td>
-                                            <td>{p.projectPriority}</td>
+                                    <tr k={k}>
 
-                                            </tr>
+                                        <th scope="row">{p.projectID}</th>
+                                        <td>{p.projectName}</td>
+                                        <td>{p.bugId}</td>
+                                        <td>{p.startDateOfProject}</td>
+                                        <td>{p.endDateOfProject}</td>
+                                        <td>{p.staffId}</td>
+                                        <td>{p.projectPriority}</td>
 
-                                    )
-                                })}
-                           
+                                    </tr>
+
+                                )
+                            })}
+
                         </tbody>
                     </table>
                 </div>

@@ -1,7 +1,18 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 
-
+// Taking current data from  browser
+/**
+* When user search the bug then SearchBug will be displayed on console window.
+* Staff can also search the staff with the help of URL and object to backend.
+* If bugId from the database matches, user will able to see the alert message in a pop-up window
+* If bugId from the database does not matches, user will able to see the alert message in a pop-up window
+ 
+* @param  url  an absolute URL giving the base location from the database
+* @param  name the location of the bug, relative to the url argument
+* @return      
+* @see         alert message
+*/
 const SearchBug = () => {
 
     const [bugList, setBugList] = useState([]);
@@ -12,8 +23,8 @@ const SearchBug = () => {
         raisedDate: '',
         description: '',
         users: {
-            userId:0,
-            userName:''
+            userId: 0,
+            userName: ''
         }
 
     });
@@ -58,6 +69,7 @@ const SearchBug = () => {
                                 type="number"
                                 id="bugId"
                                 name="bugId"
+                                data-testid="bugId"
                                 className="form-control mb-3"
                                 value={bug.bugId}
                                 placeholder="Enter Id"
@@ -68,6 +80,7 @@ const SearchBug = () => {
                                 type="submit"
                                 id="submit"
                                 name="submit"
+                                data-testid="submit"
                                 className="btn btn-primary mb-3"
                                 value="Get Bug Details"
                             />

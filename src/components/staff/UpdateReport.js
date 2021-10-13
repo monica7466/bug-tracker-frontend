@@ -2,6 +2,26 @@ import axios from 'axios';
 import React from 'react';
 import { useState } from 'react';
 
+
+// Taking current data from  browser
+/**
+* When staff update the report then updated project will be displayed on console window.
+* Staff can also update the project with the help of URL and object to backend.
+* If reportId  from the database matches, admin will able to see the alert message in a pop-up window as 'Project updated successfully!'
+* If reportId  from the database does not matches, admin will able to see the alert message in a pop-up window as "Project ID does not exist!"
+
+
+
+* @param  url  an absolute URL giving the base location from the database
+* @param  name the location of thereport, relative to the url argument
+* @return      
+* @see         alert report
+*/
+
+
+
+
+
 const UpdateReport = () => {
 
     //Data fields for input from front end
@@ -75,6 +95,7 @@ const UpdateReport = () => {
                             name="reportId"
                             className="form-control mb-3"
                             placeholder="Report ID"
+                            data-testid="reportID"
                             onChange={handleReportData()}
                         />
                         <p>PROJECT ID</p>
@@ -84,6 +105,7 @@ const UpdateReport = () => {
                             name="projectID"
                             className="form-control mb-3"
                             placeholder="Project ID"
+                            data-testid="projectID"
                             onChange={handleReportData('project')}
                         />
                         <p>SOLUTION DESCRIPTION</p>
@@ -91,6 +113,7 @@ const UpdateReport = () => {
                             type="text"
                             id="solutionDescription"
                             name="solutionDescription"
+                            data-testid="descriptionSolution"
                             className="form-control mb-3"
                             value={report.solutionDescription}
                             placeholder="Solution description of project"
@@ -101,6 +124,7 @@ const UpdateReport = () => {
                             type="text"
                             id="status"
                             name="status"
+                            data-testid="status"
                             className="form-control mb-3"
                             placeholder="status"
                             onChange={handleReportData()}
@@ -110,6 +134,7 @@ const UpdateReport = () => {
                         <input
                             type="submit"
                             id="submit"
+                            data-testid="submit"
                             name="submit"
                             className="btn btn-primary mb-3"
                             value="Update Report"

@@ -1,48 +1,45 @@
 import axios from 'axios';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 
 
-const GetAllBug = (props) => {
-
+const GetAllBug = () => {
+    //Data fields for input from browser
     const [bugList, setBugList] = useState([]);
     const [bug, setBug] = useState({
         bugId: 0,
         bugName: '',
         raisedDate: '',
         description: '',
-        users:{
-            userId:0,
-            userName:''
+        users: {
+            userId: 0,
+            userName: ''
         }
     });
-    const [oneBug, setOneBug] = useState({
+    //Data fields for input from browser
+    const [setOneBug] = useState({
         bugId: 0,
         bugName: '',
         raisedDate: '',
         description: '',
-        users:{
-            userId:0,
-            userName:''
+        users: {
+            userId: 0,
+            userName: ''
         }
     });
 
-
-    const handleBugData = (evt) => {
-        console.log("handleBugData", evt.target.name, evt.target.value);
-        setBug({
-            ...bug,
-            [evt.target.name]: evt.target.value
-        });
-    }
-
-    const handleOneBugData = (evt) => {
-        console.log("handleOneBugData", evt.target.name, evt.target.value);
-        setOneBug({
-            ...bug,
-            [evt.target.name]: evt.target.value
-        });
-    }
+    /**
+ * When admin click get All Bugs Button then submit message data is displayed on console window.
+ * Admin can get all projects with the help of URL and object to backend.
+ *  If database is empty, admin will able to see the alert message in a pop-up window.
+ 
+  
+ 
+ * @param  url  an absolute URL giving the base location from the database
+ * @param  name the location of the projects, relative to the url argument
+ * @return      
+ * @see         alert messsage
+ */
 
 
 
@@ -62,7 +59,9 @@ const GetAllBug = (props) => {
         <div className="container" >
             <title>Get All Bug</title>
             <h1>View Bug Details</h1>
-
+            { /* table-hover - table-hover class, a light gray background will be added to rows while the cursor hovers over them.
+                   By clicking on submit button, display the bug Table.
+                */}
             <div>
                 <div>
                     <input
@@ -71,6 +70,7 @@ const GetAllBug = (props) => {
                         name="submit"
                         className="btn btn-primary mb-3"
                         value="Get All Bug"
+                        data-testid="submit"
                         onClick={viewBug}
                     />
                 </div>
@@ -87,24 +87,24 @@ const GetAllBug = (props) => {
                             </tr>
                         </thead>
                         <tbody>
-                            
-                                {bugList.map((b, k) => {
-                                    console.log(b);
-                                    return (
 
-                                        <tr k={k}>
+                            {bugList.map((b, k) => {
+                                console.log(b);
+                                return (
 
-                                            <th scope="row">{b.bugId}</th>
-                                            <td>{b.bugName}</td>
-                                            <td>{b.raisedDate}</td>
-                                            <td>{b.description}</td>
-                                            <td>{b.users.userId}</td>
+                                    <tr k={k}>
 
-                                            </tr>
+                                        <th scope="row">{b.bugId}</th>
+                                        <td>{b.bugName}</td>
+                                        <td>{b.raisedDate}</td>
+                                        <td>{b.description}</td>
+                                        <td>{b.users.userId}</td>
 
-                                    )
-                                })}
-                            
+                                    </tr>
+
+                                )
+                            })}
+                            {/* conditional rendering with oneProject and setOneProject */}
                         </tbody>
                     </table>
                 </div>

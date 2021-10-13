@@ -1,7 +1,18 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 
+/**
+* When staff click get All Reports Button then submit message data is displayed on console window.
+* Staff can get all reports with the help of URL and object to backend.
+*   If database is empty, admin will able to see the alert message in a pop-up window.
 
+ 
+
+* @param  url  an absolute URL giving the base location from the database
+* @param  name the location of the reports, relative to the url argument
+* @return      
+* @see         alert messsage
+*/
 
 const GetAllReport = () => {
 
@@ -45,6 +56,7 @@ const GetAllReport = () => {
                         type="submit"
                         id="submit"
                         name="submit"
+                        data-testid="submit"
                         className="btn btn-primary mb-3"
                         value="Get All Project"
                         onClick={viewReport}
@@ -62,21 +74,21 @@ const GetAllReport = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            
-                                {reportList.map((r, k) => {
-                                    console.log(r);
-                                    return (
 
-                                        <tr kh={k}>
+                            {reportList.map((r, k) => {
+                                console.log(r);
+                                return (
 
-                                            <td scope="row">{r.reportId}</td>
-                                            <td>{r.solutionDescription}</td>
-                                            <td>{r.status}</td>
-                                            <td>{r.project.projectID}</td>
-                                        </tr>
+                                    <tr kh={k}>
 
-                                    )
-                                })}
+                                        <td scope="row">{r.reportId}</td>
+                                        <td>{r.solutionDescription}</td>
+                                        <td>{r.status}</td>
+                                        <td>{r.project.projectID}</td>
+                                    </tr>
+
+                                )
+                            })}
                         </tbody>
                     </table>
                 </div>

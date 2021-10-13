@@ -4,21 +4,6 @@ import { useHistory } from 'react-router';
 
 const StaffDashboard = () => {
 
-    // return (
-    //     <div className="sidebar">
-
-    //      <h6 className="display-5 text-dark">Dashboard</h6>
-    //             <div>
-    //                 <Link className="nav-link display-5 text-light" to="/staffs">Staffs</Link>
-    //             </div>
-    //             <div>
-    //             <Link className="nav-link display-5 text-light" to="/projects">Project</Link>
-    //             </div>
-    //             <div>
-    //             <Link className="nav-link display-5 text-light" to="/reports">Report</Link>
-    //             </div>
-    //     </div>
-    // )
     const history = useHistory();
  
     const staffs = (event) => {

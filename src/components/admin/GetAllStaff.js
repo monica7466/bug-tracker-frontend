@@ -1,9 +1,9 @@
 import axios from 'axios';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 
 
-const GetAllStaff = (props) => {
+const GetAllStaff = () => {
 
     const [staffList, setStaffList] = useState([]);
     const [staff, setStaff] = useState({
@@ -61,6 +61,7 @@ const GetAllStaff = (props) => {
                         name="submit"
                         className="btn btn-primary mb-3"
                         value="Get All Staff"
+                        data-testid="submit"
                         onClick={viewStaff}
                     />
                 </div>

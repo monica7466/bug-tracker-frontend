@@ -2,7 +2,20 @@
 import axios from 'axios';
 import React from 'react';
 import { useState, useEffect } from 'react';
+/**
+* When user update the bug then updated staff will be displayed on console window.
+* user can also update the staff with the help of URL and object to backend.
+* If bugId  from the database matches, admin will able to see the alert message in a pop-up window as 'bug updated successfully!'
+* If bugId  from the database does not matches, admin will able to see the alert message in a pop-up window as "bug ID does not exist!"
 
+ 
+
+
+* @param  url  an absolute URL giving the base location from the database
+* @param  name the location of the bug, relative to the url argument
+* @return      
+* @see         alert bug
+*/
 const UpdateBug = (props) => {
 
     const [bugList, setBugList] = useState([]);
@@ -64,12 +77,14 @@ const UpdateBug = (props) => {
                             name="bugId"
                             className="form-control mb-3"
                             placeholder="bug Id"
+                            data-testid="bugId"
                             onChange={handleBugData}
                         />
                         <input
                             type="text"
                             id="bugName"
                             name="bugName"
+                            data-testid="bugName"
                             className="form-control mb-3"
                             placeholder="bug Name"
                             onChange={handleBugData}
@@ -78,6 +93,7 @@ const UpdateBug = (props) => {
                             type="date"
                             id="raisedDate"
                             name="raisedDate"
+                            data-testid="raisedDate"
                             className="form-control mb-3"
                             placeholder="raised Date"
                             onChange={handleBugData}
@@ -86,6 +102,7 @@ const UpdateBug = (props) => {
                             type="text"
                             id="description"
                             name="description"
+                            data-testid="description"
                             className="form-control mb-3"
                             placeholder="description"
                             onChange={handleBugData}
@@ -94,6 +111,7 @@ const UpdateBug = (props) => {
                             type="number"
                             id="users"
                             name="users"
+                            data-testid="users"
                             className="form-control mb-3"
                             placeholder="User Id"
                             onChange={handleBugData}
@@ -104,6 +122,7 @@ const UpdateBug = (props) => {
                             type="submit"
                             id="submit"
                             name="submit"
+                            data-testid="submit"
                             className="btn btn-primary mb-3"
                             value="Update Bug"
                         />

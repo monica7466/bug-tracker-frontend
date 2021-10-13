@@ -1,7 +1,17 @@
 import axios from 'axios';
 import React from 'react';
 import { useState } from 'react';
+/**
+* When staff adds the message and submit it then submit message data is displayed on console window.
+* staff can also post the message with the help of URL and object to backend.
+* If projectId  from the database matches, admin will able to see the alert message in a pop-up window as 'Message sent!'
+* If projectId  from the database does not matches, admin will able to see the alert message in a pop-up window as 'Please enter valid user ID!'
 
+* @param  url  an absolute URL giving the base location from the database
+* @param  name the location of the message, relative to the url argument
+* @return     
+* @see         alert messsage
+*/
 const AddReport = () => {
 
     //Data fields for input from front end
@@ -21,7 +31,7 @@ const AddReport = () => {
 
     });
 
-
+    // Taking current data from  browser
     const handleReportData = level => (evt) => {
 
         if (!level) {
@@ -73,6 +83,7 @@ const AddReport = () => {
                             type="number"
                             id="projectID"
                             name="projectID"
+                            data-testid="projectID"
                             className="form-control mb-3"
                             value={report.project.projectID}
                             placeholder="Project ID"
@@ -83,6 +94,7 @@ const AddReport = () => {
                             type="text"
                             id="solutionDescription"
                             name="solutionDescription"
+                            data-testid="descriptionSolution"
                             className="form-control mb-3"
                             value={report.solutionDescription}
                             placeholder="solutionDescription"
@@ -92,6 +104,7 @@ const AddReport = () => {
                         <input
                             type="text"
                             id="status"
+                            data-testid="status"
                             name="status"
                             className="form-control mb-3"
                             // value={report.status}
@@ -103,6 +116,7 @@ const AddReport = () => {
                             type="submit"
                             id="submit"
                             name="submit"
+                            data-testid="submit"
                             className="btn btn-primary mb-3"
                             value="Add Report"
                         />

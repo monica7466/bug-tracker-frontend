@@ -1,6 +1,16 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+/**
+* When staff view the assign project and submit it then submit project data is displayed on console window.
+* staff can also post the project with the help of URL and object to backend.
+* If staffId  from the database matches, staff will able to see the alert project in a pop-up window as 'project assign!'
+* If staffId  from the database does not matches, staff will able to see the alert message in a pop-up window as 'Please enter valid projectID!'
 
+* @param  url  an absolute URL giving the base location from the database
+* @param  name the location of the message, relative to the url argument
+* @return     
+* @see         alert messsage
+**/
 const ViewAssignedProject = () => {
 
     const [projectList, setProjectList] = useState([]);
@@ -86,25 +96,25 @@ const ViewAssignedProject = () => {
                             </tr>
                         </thead>
                         <tbody>
-                           
-                                {projectList.map((r, k) => {
-                                    console.log(r);
-                                    return (
 
-                                        <tr k={k}>
+                            {projectList.map((r, k) => {
+                                console.log(r);
+                                return (
 
-                                            <th scope="row">{r.projectID}</th>
-                                            <td>{r.projectName}</td>
-                                            <td>{r.bugId}</td>
-                                            <td>{r.startDateOfProject}</td>
-                                            <td>{r.endDateOfProject}</td>
-                                            <td>{r.staffId}</td>
-                                            <td>{r.projectPriority}</td>
-                                        
-                                        </tr>
-                                    )
-                                })}
-                            
+                                    <tr k={k}>
+
+                                        <th scope="row">{r.projectID}</th>
+                                        <td>{r.projectName}</td>
+                                        <td>{r.bugId}</td>
+                                        <td>{r.startDateOfProject}</td>
+                                        <td>{r.endDateOfProject}</td>
+                                        <td>{r.staffId}</td>
+                                        <td>{r.projectPriority}</td>
+
+                                    </tr>
+                                )
+                            })}
+
                         </tbody>
                     </table>
                     <p><br /><br /></p>

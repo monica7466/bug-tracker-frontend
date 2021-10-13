@@ -1,11 +1,11 @@
 import axios from 'axios';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 
 
-const GetAllReport = (props) => {
-
-    const [reportList, setReportList] = useState([]);
+const GetAllReport = () => {
+    //Data fields for input from browser
+    const [setReportList] = useState([]);
     const [report, setReport] = useState({
         reportId: 0,
         solutionDescription: '',
@@ -20,7 +20,8 @@ const GetAllReport = (props) => {
             startDateOfProject: ''
         }
     });
-    const [oneReport, setOneReport] = useState({
+    //Data fields for input from browser
+    const [setOneReport] = useState({
         reportId: 0,
         solutionDescription: '',
         status: '',
@@ -35,7 +36,7 @@ const GetAllReport = (props) => {
         }
     });
 
-
+    // Taking current data from  browser
     const handleReportData = (evt) => {
         console.log("handleReportData", evt.target.name, evt.target.value);
         setReport({
@@ -43,7 +44,7 @@ const GetAllReport = (props) => {
             [evt.target.name]: evt.target.value
         });
     }
-
+    // Taking current data from  browser
     const handleOneReportData = (evt) => {
         console.log("handleOneBugData", evt.target.name, evt.target.value);
         setOneReport({
@@ -53,7 +54,18 @@ const GetAllReport = (props) => {
     }
 
 
-
+    /**
+   * When admin click get All Project Button then submit message data is displayed on console window.
+   * Admin can get all projects with the help of URL and object to backend.
+   *   If database is empty, admin will able to see the alert message in a pop-up window.
+   
+    
+   
+   * @param  url  an absolute URL giving the base location from the database
+   * @param  name the location of the projects, relative to the url argument
+   * @return      
+   * @see         alert messsage
+   */
 
     const viewReport = (evt) => {
         axios.get('http://localhost:8082/Report/getAllReports')
@@ -67,10 +79,13 @@ const GetAllReport = (props) => {
     }
 
     return (
+
         <div className="container" >
             <title>Get All Report</title>
             <h1>View Report Details</h1>
-
+            { /* table-hover - table-hover class, a light gray background will be added to rows while the cursor hovers over them.
+                   By clicking on submit button, display the bug Table.
+                */}
             <div>
                 <div>
                     <input
@@ -79,6 +94,7 @@ const GetAllReport = (props) => {
                         name="submit"
                         className="btn btn-primary mb-3"
                         value="Get All Report"
+                        data-testid="submit"
                         onClick={viewReport}
                     />
                 </div>
@@ -111,9 +127,10 @@ const GetAllReport = (props) => {
 
                                 )
                             })}
-
+                            {/* conditional rendering with oneProject and setOneProject */}
                         </tbody>
                     </table>
+
                 </div>
 
             </div>

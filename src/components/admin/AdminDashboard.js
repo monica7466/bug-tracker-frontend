@@ -4,27 +4,6 @@ import { useHistory } from 'react-router';
 
 const AdminDashboard = () => {
 
-    // return (
-    //     <div className="sidebar">
-    //      <h6 className="display-5 text-dark">Dashboard</h6>
-    //             <div>
-    //                 {/* <Link className="nav-link display-5 text-light" to="/adminDashboard/bugs">Bugs</Link> */}
-    //                 <Link className="nav-link display-5 text-light" to="/bugs">Bugs</Link>
-    //             </div>
-    //             <div>
-    //                 <Link className="nav-link display-5 text-light" to="/staff">Staff</Link>
-    //             </div>
-    //             <div>
-    //             <Link className="nav-link display-5 text-light" to="/project">Project</Link>
-    //             </div>
-    //             <div>
-    //             <Link className="nav-link display-5 text-light" to="/report">Report</Link>
-    //             </div>
-    //             <div>
-    //             <Link className="nav-link display-5 text-light" to="/message">Message</Link>
-    //             </div>
-    //     </div>
-    // )
     const history = useHistory();
 
     const bugs = (event) => {
@@ -65,7 +44,6 @@ const AdminDashboard = () => {
     return (
         <div>
             <div>
-                {/* <div className="row"></div> */}
                 <div className="row" className="alignment1" >
                     <div className="col-sm-2"></div>
                     <div className="ref">

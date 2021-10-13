@@ -1,8 +1,8 @@
 import axios from 'axios';
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
-const AddBug = (props) => {
+const AddBug = () => {
 
     const [bugList, setBugList] = useState([]);
     const [bug, setBug] = useState({
@@ -57,42 +57,42 @@ const AddBug = (props) => {
                 <p>Add a Bug</p>
                 <form className="form form-group row" onSubmit={submitAddBug} >
                     <div>
-                        <input
-                            type="number"
-                            id="bugId"
-                            name="bugId"
-                            className="form-control mb-3"
-                            placeholder="bug Id"
-                            onChange={handleBugData}
-                        />
+                        <label>Bug Name</label>
                         <input
                             type="text"
                             id="bugName"
                             name="bugName"
+                            data-testid="bugName"
                             className="form-control mb-3"
                             placeholder="bug Name"
                             onChange={handleBugData}
                         />
+                        <label>Raised Date</label>
                         <input
                             type="date"
                             id="raisedDate"
                             name="raisedDate"
+                            data-testid="raisedDate"
                             className="form-control mb-3"
                             placeholder="raised Date"
                             onChange={handleBugData}
                         />
+                        <label>Description</label>
                         <input
                             type="text"
                             id="description"
                             name="description"
+                            data-testid="description"
                             className="form-control mb-3"
                             placeholder="description"
                             onChange={handleBugData}
                         />
+                        <label>User Id</label>
                         <input
                             type="number"
                             id="users"
                             name="users"
+                            data-testid="users"
                             className="form-control mb-3"
                             placeholder="User Id"
                             onChange={handleBugData}
@@ -103,13 +103,13 @@ const AddBug = (props) => {
                             type="submit"
                             id="submit"
                             name="submit"
+                            data-testid="submit"
                             className="btn btn-primary mb-3"
                             value="Add Bug"
                             data-testid="sumbit"
                         />
                     </div>
                 </form>
-                {/* <p> {emp.eid} {emp.firstName} {emp.salary} </p> */}
             </div>
         </div>
     );
