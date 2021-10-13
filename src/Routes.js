@@ -48,6 +48,8 @@ import UserLogin from './components/Users/UserLogin';
 import UserRegister from './components/Users/UserRegister';
 import GetAllBug from './components/admin/GetAllBug';
 import ViewAssignedProject from './components/staff/ViewAssignedProject';
+import GetMyMessages from './components/Users/GetMyMessages';
+import AssignProjectToOtherStaff from './components/staff/AssignProjectToOtherStaff';
 const Routes = () => {
     return(
         <div>
@@ -128,6 +130,8 @@ const Routes = () => {
                             <Route path="/getAllReport"><GetAllReport/></Route>
                             <Route path="/getAllBug"><GetAllBug/></Route>
                             <Route path="/viewAssignedProject"><ViewAssignedProject/></Route>
+                            <Route path="/getMessages"><GetMyMessages/></Route>
+                            <Route path="/assignProjectToOtherStaff"><AssignProjectToOtherStaff/></Route>
                     </Switch>
                     </div>
                 </div>

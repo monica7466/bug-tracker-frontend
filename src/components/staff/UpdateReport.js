@@ -8,7 +8,15 @@ const UpdateReport = () => {
         reportId: 0,
         solutionDescription: '',
         status: '',
-        project: 0
+        project: {
+            projectID: 0,
+            projectName: '',
+            bugId: 0,
+            startDateOfProject: '',
+            endDateOfProject: '',
+            staffId: 0,
+            projectPriority: 0
+        }
 
     });
 
@@ -28,7 +36,7 @@ const UpdateReport = () => {
 
     const updateReportDetails = (evt) => {
 
-        axios.put(`http://localhost:8082/report/updateReport/${report.reportId}`, report)
+        axios.put(`http://localhost:8082/report/updateReport/${report.project.projectID}`)
             .then((response) => {
                 console.log(response);
                 setReport(response.data);
@@ -67,7 +75,7 @@ const UpdateReport = () => {
                                 placeholder="Enter Id"
                                 onChange={handleReportData}
                             />
-                            <p > STATUS </p> 
+                            <p > STATUS </p>
                             <   input type="text"
                                 id="status"
                                 name="status"
@@ -75,7 +83,7 @@ const UpdateReport = () => {
                                 placeholder="Enter Status"
                                 onChange={handleReportData}
                             />
-                            <p > DESCRIPTION </p> 
+                            <p > DESCRIPTION </p>
                             <    input type="text"
                                 id="solutionDescription"
                                 name="solutionDescription"
@@ -83,10 +91,10 @@ const UpdateReport = () => {
                                 placeholder="Enter Description"
                                 onChange={handleReportData}
                             />
-                            <p> PROJECT ID </p> 
+                            <p> PROJECT ID </p>
                             <    input type="number"
-                                id="project"
-                                name="project"
+                                id="projectID"
+                                name="projectID"
                                 className="form-control mb-3"
                                 placeholder="Enter Id"
                                 onChange={handleReportData}

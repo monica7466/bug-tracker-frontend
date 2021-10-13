@@ -1,8 +1,16 @@
 import React from 'react';
-
+import { useHistory } from 'react-router';
 
 const Messages = () => {
+    
+    const history = useHistory();
+    const GetMyMessages = (event) => {
 
+
+        history.push('/getMessages');
+
+        event.preventDefault();
+    }
     return (
         <div>
             <div>
@@ -18,7 +26,7 @@ const Messages = () => {
                         <h5 class="card-title text-dark">Get Messages</h5>
                         <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
-                        <button type="button" class="btn btn-primary" >Get</button>
+                        <button type="button" class="btn btn-primary" onClick={GetMyMessages}>Get</button>
                     </div>
                 </div>
                 <div class="card-columns">

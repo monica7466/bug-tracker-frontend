@@ -12,6 +12,13 @@ const Projects = () => {
 
         event.preventDefault();
     }
+    const submitUpdateProject = (event) => {
+
+
+        history.push('/assignProjectToOtherStaff');
+
+        event.preventDefault();
+    }
     return (
         <div>
             <div>
@@ -37,7 +44,7 @@ const Projects = () => {
                         <h5 class="card-title text-dark">Assign Project to other staff</h5>
                         <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
-                        <button type="button" class="btn btn-primary" >Assign</button>
+                        <button type="button" class="btn btn-primary" onClick={submitUpdateProject}>Assign</button>
                     </div>
                 </div>
                 </div>

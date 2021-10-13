@@ -11,7 +11,7 @@ const GetAllReport = () => {
         solutionDescription: '',
         status: '',
         project: {
-            projectId: 0,
+            projectID: 0,
             projectName: '',
             bugId: 0,
             startDateOfProject: '',
@@ -72,7 +72,7 @@ const GetAllReport = () => {
                                             <td scope="row">{r.reportId}</td>
                                             <td>{r.solutionDescription}</td>
                                             <td>{r.status}</td>
-                                            <td>{r.getData}</td>
+                                            <td>{r.project.projectID}</td>
                                         </tr>
 
                                     )

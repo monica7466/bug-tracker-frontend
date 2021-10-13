@@ -10,13 +10,29 @@ const GetAllReport = (props) => {
         reportId: 0,
         solutionDescription: '',
         status: '',
-        project: 0
+        project: {
+            projectID: 0,
+            bugId: 0,
+            endDateOfProject: '',
+            projectName: '',
+            projectPriority: 0,
+            staffId: 0,
+            startDateOfProject: ''
+        }
     });
     const [oneReport, setOneReport] = useState({
         reportId: 0,
         solutionDescription: '',
         status: '',
-        project: 0
+        project: {
+            projectID: 0,
+            bugId: 0,
+            endDateOfProject: '',
+            projectName: '',
+            projectPriority: 0,
+            staffId: 0,
+            startDateOfProject: ''
+        }
     });
 
 
@@ -40,7 +56,7 @@ const GetAllReport = (props) => {
 
 
     const viewReport = (evt) => {
-        axios.get('http://localhost:8082/bug/getAllbugs')
+        axios.get('http://localhost:8082/Report/getAllReports')
             .then((response) => {
                 setReportList(response.data);
             }).catch(error => {
@@ -79,23 +95,23 @@ const GetAllReport = (props) => {
                             </tr>
                         </thead>
                         <tbody>
-                            
-                                {bugList.map((r, k) => {
-                                    console.log(r);
-                                    return (
 
-                                        <tr k={k}>
+                            {bugList.map((r, k) => {
+                                console.log(r);
+                                return (
 
-                                            <th scope="row">{r.reportId}</th>
-                                            <td>{r.solutionDescription}</td>
-                                            <td>{r.status}</td>
-                                            <td>{r.project}</td>
+                                    <tr k={k}>
 
-                                            </tr>
+                                        <th scope="row">{r.reportId}</th>
+                                        <td>{r.solutionDescription}</td>
+                                        <td>{r.status}</td>
+                                        <td>{r.project.projectID}</td>
 
-                                    )
-                                })}
-                            
+                                    </tr>
+
+                                )
+                            })}
+
                         </tbody>
                     </table>
                 </div>

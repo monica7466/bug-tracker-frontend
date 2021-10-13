@@ -83,6 +83,7 @@ const UserRegister = (props) => {
                         />
                     </div>
                 </form>
+               
                 {/* <p> {emp.eid} {emp.firstName} {emp.salary} </p> */}
             </div>
            </div> 
