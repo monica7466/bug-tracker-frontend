@@ -7,22 +7,22 @@ const GetAllProject = (props) => {
 
     const [projectList, setProjectList] = useState([]);
     const [project, setProject] = useState({
-        projectID: '',
+        projectID: 0,
         projectName: '',
-        bugId: '',
+        bugId: 0,
         startDateOfProject: '',
         endDateOfProject: '',
-        staffId: '',
-        projectPriority: ''
+        staffId: 0,
+        projectPriority: 0
     });
     const [oneProject, setOneProject] = useState({
-        projectID: '',
+        projectID: 0,
         projectName: '',
-        bugId: '',
+        bugId: 0,
         startDateOfProject: '',
         endDateOfProject: '',
-        staffId: '',
-        projectPriority: ''
+        staffId: 0,
+        projectPriority: 0
     });
 
 
@@ -46,7 +46,7 @@ const GetAllProject = (props) => {
 
 
     const viewProject = (evt) => {
-        axios.get('http://localhost:8082/getAllEmployee')
+        axios.get('http://localhost:8082/Project/getAllProject')
             .then((response) => {
                 setProjectList(response.data);
             }).catch(error => {

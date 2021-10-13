@@ -1,107 +1,88 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import axios from "axios";
-// import Dashboard from './Dashboard';
 
-const StaffLogin = (props) => {
+const StaffLogin = () => {
 
     const history = useHistory();
 
-//Data fields for input from browser
-    const [AppUser, setAppUser] = useState({
-        userId: '',
-        password: ''
+
+    const [oneStaff, setOneStaff] = useState({
+        staffId: 0,
+       // employeeName: '',
+       staffName:'',
+        staffPassword: ''
     });
 
-    useEffect(
-        () => {
-            setAppUser({
-                userId: '',
-                password: ''
-            }
-            );
-        }, []);
-
- //Data fields for input from browser
-
-    const handleAppUser = (event) => {
-        console.log(event.target.value);
-        setAppUser({
-            ...AppUser,
-            [event.target.name]: event.target.value
+    const handleOneStaffData = (evt) => {
+        console.log("handleOneStaffData", evt.target.name, evt.target.value);
+        setOneStaff({
+            ...oneStaff,
+            [evt.target.name]: evt.target.value
         });
-    };
-
-    //Data fields for input from browser
-     const submitAppUser = (event) => {
-        console.log(AppUser.userId);
-        console.log(AppUser.password);
-       
-        event.preventDefault();
     }
+
+    const onSubmit = (evt) => {
+
+        axios.post('http://localhost:8082/StaffLogin',oneStaff)
+            .then(async(response) => {
+                setOneStaff(response.data);
+                alert("Staff logged in successfully!");
+                history.push('/staffDashboard');
+            }).catch(error => {
+                console.log(error.message)
+                alert("Staff does not exist!");
+            });
+        evt.preventDefault();
+    }
+
+    
+
 
     return (
         <div className="container">
-            <h4> Staff Login </h4>
+            <title>Staff Login</title>
+            <div class="card" style={{ width: "18rem" }}  className="container">
+            <div class="card-body">
+            <form>
+                <h3>Staff Login</h3>
 
-            <hr/>
-            <div class="card" style={{ width: "18rem" }} className="container">
-            <div class="card-body"></div>
-           
-                <form onSubmit={submitAppUser}>
-                    <div className="mb-3">
-
-                    <h6> Staff ID </h6>
-
-                    {/* Taking user Id from browser */}
-
-                        <input
-                            type="text"
-                            className="staffId"
-                            name="staffId"
+                <div className="form-group">
+                    <label>Staff Name</label>
+                    <input type="number"
                             id="staffId"
-                            data-testid="staffId"
+                            name="staffId"
                             className="form-control mb-3"
-                            placeholder="Enter Id"
-                            value={AppUser.userId}
-                            onChange={handleAppUser}
-                          
-                         />
+                            // value={oneAdmin.adminName}
+                            onChange={handleOneStaffData}
+                            placeholder="Enter username" />
+                </div>
 
-                       <h6> Staff Password </h6>
-
-                       {/* Taking password from browser */}
-                        <input
-                            type="password"
-                            className="form-control"
-                            name="password"
-                            id="password"
-                            // Add data-testid here : jest-test  
-                            data-testid="password"
+                <div className="form-group">
+                    <label>Password</label>
+                    <input type="password"
+                            id="staffPassword"
+                            name="staffPassword"
                             className="form-control mb-3"
-                            placeholder="Enter Password"
-                            value={AppUser.password}
-                            onChange={handleAppUser} />
-                           
-                        <input
-                            type="submit"
-                            id="submit"
-                            // Add data-testid here : jest-test  
-                            data-testid="submit"
-                            name="submit"
-                            className="form-control btn btn-primary mb-3"
-                            value="Login"
-                            onClick={submitAppUser}
-                        />
+                            // value={oneAdmin.adminPassword}
+                            onChange={handleOneStaffData}
+                            placeholder="Enter Password" />
+                </div>
+
+                <div className="form-group">
+                    <div className="custom-control custom-checkbox">
+                        <input type="checkbox" className="custom-control-input" id="customCheck1" />
                     </div>
-                </form>
+                </div>
 
-                 {/* conditional rendering with AppUser and setAppUser */}
-                 
+                <button type="submit" className="btn btn-primary btn-block" onClick={onSubmit}>Submit</button>
+
+
+            </form>
             </div>
-           
-        </div >
-    )
+            </div>
+        </div>
+    );
 }
+
 export default StaffLogin;

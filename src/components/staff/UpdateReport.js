@@ -36,7 +36,7 @@ const UpdateReport = () => {
 
     const updateReportDetails = (evt) => {
 
-        axios.put(`http://localhost:8082/report/updateReport/${report.project.projectID}`)
+        axios.put(`http://localhost:8082/report/updateReport/${report.project.projectID}`,report)
             .then((response) => {
                 console.log(response);
                 setReport(response.data);
