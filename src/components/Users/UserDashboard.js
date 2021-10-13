@@ -51,10 +51,10 @@ const UsersDashboard = () => {
         <div>
             <div>
                 {/* <div className="row"></div> */}
-                <div className="row" className="alignment" >
+                <div className="row" className="alignment1" >
                     <div className="col-sm-2"></div>
                     <div className="ref">
-                        <h3 style={{ color: "blue", marginTop: "30px", marginRight: "500px" }}>User Dashboard</h3>
+                        <h3 style={{ color: "blue", marginTop: "30px", marginRight: "50px" }}>User Dashboard</h3>
                         <div class="card-columns">
                             <div class="card" style={{ width: "22rem" }}>
                                 <div class="card-body">

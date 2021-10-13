@@ -31,6 +31,7 @@ const UserRegister = (props) => {
         axios.post('http://localhost:8082/UserRegistration', user)
             .then((response) => {
                 setOneUser(response.data);
+
                 alert(`User Registered successfully!`)
                 history.push('/home');
             }).catch(error => {

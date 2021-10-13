@@ -52,11 +52,12 @@ const UserLogin = (props) => {
 
     return (
         <div className="container">
-            <title>User Login</title>
+            <h4>User Login</h4>
+            <hr />
             <div class="card" style={{ width: "18rem" }}  className="container">
             <div class="card-body">
             <form>
-                <h3>User Login</h3>
+                
 
                 <div className="form-group">
                     <label>User Name</label>

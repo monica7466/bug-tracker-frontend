@@ -33,7 +33,7 @@ const UpdateProject = () => {
 
 
     const updateProjectDetails = (evt) => {
-        axios.put('http://localhost:8082/Project/updateProject', project)
+        axios.put(`http://localhost:8082/Project/updateProject/${project.projectID}`)
             .then((response) => {
                 console.log(response);
                 setProject(response.data);
