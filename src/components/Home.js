@@ -1,8 +1,8 @@
 import React from 'react';
 import slide1 from '../Assest/slide1.jpg';
 import slide2 from '../Assest/slide2.jpg';
-import slide3 from '../Assest/slide4 (1).jpeg';
-import slide4 from '../Assest/slide4 (2).jpeg';
+// import slide3 from '../Assest/slide4 (1).jpeg';
+// import slide4 from '../Assest/slide4 (2).jpeg';
 
 const Home = () => {
 
@@ -19,12 +19,12 @@ const Home = () => {
                     <div class="carousel-item">
                         <img class="car d-block" src={slide2} alt="Second slide" />
                     </div>
-                    <div class="carousel-item">
+                    {/* <div class="carousel-item">
                         <img class="car d-block" src={slide3} alt="Third slide" />
                     </div>
                     <div class="carousel-item">
                         <img class="car d-block" src={slide4} alt="Four slide" />
-                    </div>
+                    </div> */}
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>

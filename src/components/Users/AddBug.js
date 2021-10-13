@@ -44,7 +44,7 @@ const AddBug = (props) => {
                 alert('Bug sent successfully!')
             }).catch(error => {
                 console.log(error.message);
-                alert('Enter Correct Details!')
+                alert(error.response.data.message)
             });
         evt.preventDefault();
     }
@@ -105,6 +105,7 @@ const AddBug = (props) => {
                             name="submit"
                             className="btn btn-primary mb-3"
                             value="Add Bug"
+                            data-testid="sumbit"
                         />
                     </div>
                 </form>
