@@ -1,6 +1,5 @@
 import React from 'react';
 import LoginPage from '../LoginPage';
-import AddBug from './AddBug';
 import AddMessage from './admin/AddMessage';
 import AddProject from './admin/AddProject';
 import DeleteStaff from './admin/DeleteStaff';

@@ -1,9 +1,8 @@
-
 import axios from 'axios';
 import React from 'react';
 import { useState, useEffect } from 'react';
 
-const UpdateBug = (props) => {
+const AddBug = (props) => {
 
     const [bugList, setBugList] = useState([]);
     const [bug, setBug] = useState({
@@ -37,7 +36,7 @@ const UpdateBug = (props) => {
         });
     }
 
-    const submitUpdateBugs = (evt) => {
+    const submitAddBug = (evt) => {
         console.log("submitBugData");
         axios.post('http://localhost:8082/bug/addBug', bug)
             .then((response) => {
@@ -55,8 +54,8 @@ const UpdateBug = (props) => {
     return (
         <div className="container" >
             <div>
-                <p>Update a Bug</p>
-                <form className="form form-group row" onSubmit={submitUpdateBugs} >
+                <p>Add a Bug</p>
+                <form className="form form-group row" onSubmit={submitAddBug} >
                     <div>
                         <input
                             type="number"
@@ -105,7 +104,7 @@ const UpdateBug = (props) => {
                             id="submit"
                             name="submit"
                             className="btn btn-primary mb-3"
-                            value="Update Bug"
+                            value="Add Bug"
                         />
                     </div>
                 </form>
@@ -114,4 +113,4 @@ const UpdateBug = (props) => {
         </div>
     );
 }
-export default UpdateBug;
+export default AddBug;

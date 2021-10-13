@@ -1,8 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 
-
-const SearchProject = () => {
+const ViewAssignedProject = () => {
 
     const [projectList, setProjectList] = useState([]);
     const [project, setProject] = useState({
@@ -30,13 +29,14 @@ const SearchProject = () => {
     }
 
 
-    const searchProject = (evt) => {
-        console.log("searchProject");
-        axios.get(`http://localhost:8082/searchProject/${project.projectID}`)
+    const searchProjectByStaffId = (evt) => {
+        console.log(project.staffId);
+        axios.get(`http://localhost:8082/ViewAssignedProject/${project.staffId}`)
             .then((response) => {
-                setProject(response.data);
+                setProjectList(response.data);
+                console.log(projectList)
             }).catch(error => {
-                alert("Project ID does not exist!");
+                alert("Bug ID does not exist!");
             });
         evt.preventDefault();
     }
@@ -50,15 +50,15 @@ const SearchProject = () => {
                 <div class="card-body">
                     <h3 >Search Project</h3>
                     <hr />
-                    <form className="form form-group row container" onSubmit={searchProject} >
+                    <form className="form form-group row container" onSubmit={searchProjectByStaffId} >
                         <div>
-                            <p>PROJECT ID</p>
+                            <p>Staff Id</p>
                             <input
                                 type="number"
-                                id="projectID"
-                                name="projectID"
+                                id="staffId"
+                                name="staffId"
                                 className="form-control mb-3"
-                                value={project.projectID}
+                                value={project.staffId}
                                 placeholder="Enter Id"
                                 onChange={handleProjectData}
                             />
@@ -72,7 +72,7 @@ const SearchProject = () => {
                             />
                         </div>
                     </form>
-                    <table class="table table-hover table-secondary table-striped">
+                    <table class="table table-hover table-secondary table-stripped">
                         <thead>
                             <tr>
                                 <th scope="col">PROJECT ID</th>
@@ -82,21 +82,31 @@ const SearchProject = () => {
                                 <th scope="col">END DATE OF PROJECT</th>
                                 <th scope="col">STAFF ID</th>
                                 <th scope="col">PROJECT PRIORITY</th>
+
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">{project.projectID}</th>
-                                <td>{project.projectName}</td>
-                                <td>{project.bugId}</td>
-                                <td>{project.startDateOfProject}</td>
-                                <td>{project.endDateOfProject}</td>
-                                <td>{project.staffId}</td>
-                                <td>{project.projectPriority}</td>
-                            </tr>
+                           
+                                {projectList.map((r, k) => {
+                                    console.log(r);
+                                    return (
+
+                                        <tr k={k}>
+
+                                            <th scope="row">{r.projectID}</th>
+                                            <td>{r.projectName}</td>
+                                            <td>{r.bugId}</td>
+                                            <td>{r.startDateOfProject}</td>
+                                            <td>{r.endDateOfProject}</td>
+                                            <td>{r.staffId}</td>
+                                            <td>{r.projectPriority}</td>
+                                        
+                                        </tr>
+                                    )
+                                })}
+                            
                         </tbody>
                     </table>
-                    <p></p>
                     <p><br /><br /></p>
                 </div>
             </div>
@@ -105,4 +115,4 @@ const SearchProject = () => {
     );
 }
 
-export default SearchProject;
+export default ViewAssignedProject;

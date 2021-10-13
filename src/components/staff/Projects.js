@@ -1,9 +1,17 @@
 import React from 'react';
 // import StaffDashboard from './StaffDashboard';
-
+import { useHistory } from 'react-router';
 
 const Projects = () => {
+    
+    const history = useHistory();
+    const searchProjectByStaffId = (event) => {
 
+
+        history.push('/viewAssignedProject');
+
+        event.preventDefault();
+    }
     return (
         <div>
             <div>
@@ -19,7 +27,7 @@ const Projects = () => {
                         <h5 class="card-title text-dark">View Assign Project</h5>
                         <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
-                        <button type="button" class="btn btn-primary" >View</button>
+                        <button type="button" class="btn btn-primary" onClick={searchProjectByStaffId}>View</button>
                     </div>
                 </div>
                 <div class="card-columns">

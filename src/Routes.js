@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AboutUs from './components/AboutUs';
-import AddBug from './components/AddBug';
+import AddBug from './components/Users/AddBug';
 import AdminDashboard from './components/admin/AdminDashboard';
 import Bug from './components/Users/Bug';
 import Bugs from './components/admin/Bugs';
@@ -47,6 +47,7 @@ import StaffLogin from './components/staff/StaffLogin';
 import UserLogin from './components/Users/UserLogin';
 import UserRegister from './components/Users/UserRegister';
 import GetAllBug from './components/admin/GetAllBug';
+import ViewAssignedProject from './components/staff/ViewAssignedProject';
 const Routes = () => {
     return(
         <div>
@@ -79,7 +80,6 @@ const Routes = () => {
                             <Route path="/login"> <Login /> </Route>
                             <Route path="/register"> <Register /> </Route>
                             <Route path="/about"><AboutUs/></Route>
-                            <Route path="/addBug"><AddBug/></Route>
                             <Route path="/staff"><Staff/></Route>
                             <Route path="/project"><Project/></Route>
                             <Route path="/report"><Report/></Route>
@@ -127,6 +127,7 @@ const Routes = () => {
                             <Route path="/userRegister"> <UserRegister /> </Route>
                             <Route path="/getAllReport"><GetAllReport/></Route>
                             <Route path="/getAllBug"><GetAllBug/></Route>
+                            <Route path="/viewAssignedProject"><ViewAssignedProject/></Route>
                     </Switch>
                     </div>
                 </div>
