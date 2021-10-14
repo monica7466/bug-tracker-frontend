@@ -24,7 +24,7 @@ const Staffs = () => {
                     <img src="https://bit.ly/3ByVcrR" class="card-img-top" alt="..." />
                     <div class="card-body">
                         <h5 class="card-title text-dark">View All Staff</h5>
-                        <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text text-dark">Perform view all staff by using below button.</p>
                         {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
                         <button type="button" class="btn btn-primary" onClick={submitViewStaff}>View All</button>
                     </div>

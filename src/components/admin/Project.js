@@ -54,7 +54,7 @@ const Project = () => {
                     <img src="https://bit.ly/3FvfYv7" class="card-img-top" alt="..." />
                     <div class="card-body">
                         <h5 class="card-title text-dark">Add Project</h5>
-                        <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text text-dark">Perform add project by using below button.</p>
                         {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
                         <button type="button" class="btn btn-primary" onClick={submitAddProject} >Add</button>
                     </div>
@@ -63,7 +63,7 @@ const Project = () => {
                     <img src="https://bit.ly/3BvXtnR" class="card-img-top" alt="..." />
                     <div class="card-body">
                         <h5 class="card-title text-dark">Update Project</h5>
-                        <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text text-dark">Perform update project by using below button.</p>
                         <button type="button" class="btn btn-primary" onClick={updateProjectDetails}>Update</button>
                     </div>
                 </div>
@@ -71,7 +71,7 @@ const Project = () => {
                     <img src="https://bit.ly/3lxKM6x" class="card-img-top" alt="..." />
                     <div class="card-body">
                         <h5 class="card-title text-dark">Search Project</h5>
-                        <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text text-dark">Perform search project by using below button.</p>
                         <button type="button" class="btn btn-primary" onClick={SearchProjectById}>Search</button>
                     </div>
                 </div>
@@ -79,7 +79,7 @@ const Project = () => {
                     <img src="https://bit.ly/3oV6qUa" class="card-img-top" alt="..." />
                     <div class="card-body">
                         <h5 class="card-title text-dark">Delete Project</h5>
-                        <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text text-dark">Perform delete project by using below button.</p>
                         <button type="button" class="btn btn-primary" onClick={DeleteProject}>Delete</button>
                     </div>
                 </div>
@@ -87,7 +87,7 @@ const Project = () => {
                     <img src="https://bit.ly/3ByVcrR" class="card-img-top" alt="..." />
                     <div class="card-body">
                         <h5 class="card-title text-dark">Get All Project</h5>
-                        <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text text-dark">Perform get all project by using below button.</p>
                         <button type="button" class="btn btn-primary"onClick={viewProject} >View All</button>
                     </div>
                 </div>

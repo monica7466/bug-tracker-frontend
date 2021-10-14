@@ -24,7 +24,7 @@ const Messages = () => {
                     <img src="https://bit.ly/30hy0Rp" class="card-img-top" alt="..." />
                     <div class="card-body">
                         <h5 class="card-title text-dark">Get Messages</h5>
-                        <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text text-dark"> Perform get message by using below button.</p>
                         {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
                         <button type="button" class="btn btn-primary" onClick={GetMyMessages}>Get</button>
                     </div>
@@ -34,7 +34,7 @@ const Messages = () => {
                     <img src="https://bit.ly/3oV6qUa" class="card-img-top" alt="..." />
                     <div class="card-body">
                         <h5 class="card-title text-dark">Delete Message</h5>
-                        <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text text-dark">Perform delete message by using below button.</p>
                         {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
                         <button type="button" class="btn btn-primary" >Delete</button>
                     </div>

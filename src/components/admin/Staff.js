@@ -57,7 +57,7 @@ const Staff = () => {
                                 <img src="https://bit.ly/2WYrYUw" class="card-img-top" alt="..." />
                                 <div class="card-body">
                                     <h5 class="card-title text-dark">Add Staff</h5>
-                                    <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text text-dark">Perform add staff by using below button.</p>
                                     {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
                                     <button type="button" class="btn btn-primary" onClick={submitAddStaff}>Add</button>
                                 </div>
@@ -66,7 +66,7 @@ const Staff = () => {
                                 <img src="https://bit.ly/3BvXtnR" class="card-img-top" alt="..." />
                                 <div class="card-body">
                                     <h5 class="card-title text-dark">Update Staff</h5>
-                                    <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text text-dark">Perform update staff by using below button.</p>
                                     <button type="button" class="btn btn-primary" onClick={updateStaff} >Update</button>
                                 </div>
                             </div>
@@ -74,7 +74,7 @@ const Staff = () => {
                                 <img src="https://bit.ly/3lxKM6x" class="card-img-top" alt="..." />
                                 <div class="card-body">
                                     <h5 class="card-title text-dark">Search Staff</h5>
-                                    <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text text-dark">Perform search staff by using below button.</p>
                                     <button type="button" class="btn btn-primary" onClick={submitGetStaffById}>Search</button>
                                 </div>
                             </div>
@@ -82,7 +82,7 @@ const Staff = () => {
                                 <img src="https://bit.ly/3oV6qUa" class="card-img-top" alt="..." />
                                 <div class="card-body">
                                     <h5 class="card-title text-dark">Delete Staff</h5>
-                                    <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text text-dark">Perform delete staff by using below button.</p>
                                     <button type="button" class="btn btn-primary" onClick={deleteAdmin} >Delete</button>
                                 </div>
                             </div>
@@ -90,7 +90,7 @@ const Staff = () => {
                                 <img src="https://bit.ly/3mItUcv" class="card-img-top" alt="..." />
                                 <div class="card-body">
                                     <h5 class="card-title text-dark">Get All Staff</h5>
-                                    <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text text-dark">Perform get all staff by using below button.</p>
                                     <button type="button" class="btn btn-primary" onClick={viewStaff}>getAll</button>
                                 </div>
                             </div>

@@ -25,8 +25,7 @@ const Message = () => {
                     <img src="https://bit.ly/30hy0Rp" class="card-img-top" alt="..." />
                     <div class="card-body">
                         <h5 class="card-title text-dark">Add Message</h5>
-                        <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
+                        <p class="card-text text-dark">Perform add message by using below button.</p>
                         <button type="button" class="btn btn-primary" onClick={submitAddMsg} >Add</button>
                     </div>
                 </div>

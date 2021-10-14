@@ -51,7 +51,7 @@ const AdminDashboard = () => {
                     <div class="card-columns">
                      <div class="card" style={{ width: "22rem" }}>
                     <div class="card-body">
-                        <img src="https://bit.ly/3oLC3j4" class="card-img-top" alt="..." />
+                        <img src="https://bit.ly/3DAUbAn" class="card-img-top" alt="..." />
                         <h5 class="card-title text-dark">BUGS OPERATIONS</h5>
                         <p class="card-text text-dark">Perform bug opartions by using below button.</p>
                         <button type="button" class="btn btn-primary" onClick={bugs}>BUGS</button>
@@ -59,7 +59,7 @@ const AdminDashboard = () => {
                 </div>
                 <div class="card" style={{ width: "22rem" }}>
                     <div class="card-body">
-                    <img src="https://bit.ly/3FCVb8Y" class="card-img-top" alt="..." />
+                    <img src="https://bit.ly/3mOwyO1" class="card-img-top" alt="..." />
                         <h5 class="card-title text-dark">STAFF OPERATIONS</h5>
                         <p class="card-text text-dark">Perform staff opartions by using below button.</p>
                         {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
@@ -68,7 +68,7 @@ const AdminDashboard = () => {
                 </div>
                 <div class="card" style={{ width: "22rem" }}>
                     <div class="card-body">
-                    <img src="https://bit.ly/3FCVb8Y" class="card-img-top" alt="..." />
+                    <img src="https://bit.ly/30tJKAt" class="card-img-top" alt="..." />
                         <h5 class="card-title text-dark">PROJECT OPERATIONS</h5>
                         <p class="card-text text-dark">Perform project opartions by using below button.</p>
                         {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
@@ -77,7 +77,7 @@ const AdminDashboard = () => {
                 </div>
                 <div class="card" style={{ width: "22rem" }}>
                     <div class="card-body">
-                    <img src="https://bit.ly/3FCVb8Y" class="card-img-top" alt="..." />
+                    <img src="https://bit.ly/3lEfTNO" class="card-img-top" alt="..." />
                         <h5 class="card-title text-dark">REPORT OPERATIONS</h5>
                         <p class="card-text text-dark">Perform report opartions by using below button.</p>
                         {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
@@ -86,7 +86,7 @@ const AdminDashboard = () => {
                 </div>
                 <div class="card" style={{ width: "22rem" }}>
                     <div class="card-body">
-                    <img src="https://bit.ly/3FCVb8Y" class="card-img-top" alt="..." />
+                    <img src="https://bit.ly/2YR4LnS" class="card-img-top" alt="..." />
                         <h5 class="card-title text-dark">MESSAGE OPERATIONS</h5>
                         <p class="card-text text-dark">Perform message opartions by using below button.</p>
                         {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}

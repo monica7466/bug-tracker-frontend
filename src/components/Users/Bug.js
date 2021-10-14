@@ -44,7 +44,7 @@ const Bug = () => {
                 <img src="https://bit.ly/3oRZQOu" class="card-img-top" alt="..." />
                 <div class="card-body">
                     <h5 class="card-title text-dark">Add Bugs</h5>
-                    <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text text-dark">Perform add  bugby using below button.</p>
                     {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
                     <button type="button" class="btn btn-primary" onClick={submitAddBug}>Add</button>
                 </div>
@@ -53,7 +53,7 @@ const Bug = () => {
                 <img src="https://bit.ly/3BvXtnR" class="card-img-top" alt="..." />
                 <div class="card-body">
                     <h5 class="card-title text-dark">Update Bug</h5>
-                    <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text text-dark">Perform update  bug by using below button.</p>
                     <button type="button" class="btn btn-primary" onClick={submitUpdateBugs}>Update</button>
                 </div>
             </div>
@@ -61,7 +61,7 @@ const Bug = () => {
                 <img src="https://bit.ly/3FCVb8Y" class="card-img-top" alt="..." />
                 <div class="card-body">
                     <h5 class="card-title text-dark">Search Bug</h5>
-                    <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text text-dark">Perform search  bug by using below button.</p>
                     <button type="button" class="btn btn-primary" onClick={searchBugs}>Search</button>
                 </div>
             </div>
@@ -69,7 +69,7 @@ const Bug = () => {
                 <img src="https://bit.ly/3oV6qUa" class="card-img-top" alt="..." />
                 <div class="card-body">
                     <h5 class="card-title text-dark">Delete Bug</h5>
-                    <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text text-dark">Perform delete  bug by using below button.</p>
                     <button type="button" class="btn btn-primary" onClick={deleteBug}>Delete</button>
                 </div>
             </div>

@@ -26,7 +26,7 @@ const Report = () => {
                     <img src="https://bit.ly/3FAqSzF" class="card-img-top" alt="..." />
                     <div class="card-body">
                         <h5 class="card-title text-dark">Get All Reports</h5>
-                        <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text text-dark">Perform get all report by using below button.</p>
                         {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
                         <button type="button" class="btn btn-primary" onClick={viewReport}>GetAll</button>
                     </div>
