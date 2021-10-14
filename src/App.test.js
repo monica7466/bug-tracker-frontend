@@ -1,9 +1,35 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import { AddBug } from './component/user/AddBug';
-import { getByTestId, getByText } from '@testing-library/dom';
-import App from './App';
-import AddMessage from './component/staff/AddMessage';
+import { render } from '@testing-library/react';
+import UserLogin from './components/Users/UserLogin';
+import UserRegister from './components/Users/UserRegister';
+import StaffLogin from './components/staff/StaffLogin';
+import AdminLogin from './components/admin/AdminLogin';
+import AddMessage from './components/admin/AddMessage';
+import AddBug from './components/Users/AddBug';
+import AddProject from './components/admin/AddProject';
+import AddStaff from './components/admin/AddStaff';
+import AddReport from './components/staff/AddReport';
+import UpdateReport from './components/staff/UpdateReport';
+import UpdateProject from './components/admin/UpdateProject';
+import UpdateStaff from './components/admin/UpdateStaff';
+import UpdateBug from './components/Users/UpdateBug';
+import DeleteBug from './components/Users/DeleteBug';
+import DeleteProject from './components/admin/DeleteProject';
+import DeleteStaff from './components/admin/DeleteStaff';
+import DeleteReport from './components/staff/DeleteReport';
+import SearchReport from './components/staff/SearchReport';
+import SearchProject from './components/admin/SearchProject';
+import SearchStaffById from './components/admin/SearchStaffById';
+import SearchBug from './components/Users/SearchBug';
+import SearchReportById from './components/Users/SearchReportById';
+import GetMyMessages from './components/Users/GetMyMessages';
+import GetAllBug from './components/admin/GetAllBug';
+import GetAllProject from './components/admin/GetAllProject';
+import GetAllReport from './components/staff/GetAllReport';
+import GetAllStaff from './components/admin/GetAllStaff';
+import ViewAllStaff from './components/admin/ViewAllStaff';
+
+
 
 
 
@@ -58,29 +84,29 @@ test('find submit in AddMessage', () => {
   expect(queryByTestId("submit", "messages", "users")).toBeInTheDocument();
 });
 
-// Tesing bugId, bugName, raisedDate, description, users, submit inputForm for AddBug
+// Tesing bugName, raisedDate, description, users, submit inputForm for AddBug
 test('find submit in AddBug', () => {
   const { queryByTestId } = render(
     <AddBug />
   );
-  expect(queryByTestId("bugId", "bugName", "raisedDate", "description", "users", "submit")).toBeTruthy();
+  expect(queryByTestId("bugName", "raisedDate", "description", "users", "submit")).toBeTruthy();
 });
 
-// Tesing projectID, projectName, bugId, startDateOfProject, endDateOfProject, staffId, projectPriority, submit inputForm for AddProject
+// Tesing  projectName, bugId, startDateOfProject, endDateOfProject, staffId, projectPriority, submit inputForm for AddProject
 test('find submit in AddProject', () => {
   const { queryByTestId } = render(
     <AddProject />
   );
-  expect(queryByTestId("projectID", "projectName", "bugId", "startDateOfProject", "endDateOfProject", "staffId"
+  expect(queryByTestId("projectName", "bugId", "startDateOfProject", "endDateOfProject", "staffId"
     , "projectPriority", "submit")).toBeTruthy();
 });
 
-// Tesing staffId, staffPassword, userName,  submit inputForm for AddStaff
+// Tesing staffPassword, userName,  submit inputForm for AddStaff
 test('find submit in AddStaff', () => {
   const { queryByTestId } = render(
     <AddStaff />
   );
-  expect(queryByTestId("staffId", "staffPassword", "userName", "submit")).toBeTruthy();
+  expect(queryByTestId("staffPassword", "userName", "submit")).toBeTruthy();
 });
 
 // Tesing projectID, descriptionSolution, status, submit inputForm for AddReport
@@ -95,6 +121,8 @@ test('find submit in AddReport', () => {
 
 
 //*********************************************** UPDATE OPERATION ***********************************************
+
+
 
 
 // Tesing projectID, descriptionSolution, status, submit inputForm for UpdateReport
@@ -119,7 +147,7 @@ test('find submit in UpdateStaff', () => {
   const { queryByTestId } = render(
     <UpdateStaff />
   );
-  expect(queryByTestId("StaffId", "userName", "staffPassword", "submit")).toBeTruthy();
+  expect(queryByTestId("staffId", "userName", "staffPassword", "submit")).toBeTruthy();
 });
 
 
@@ -135,6 +163,7 @@ test('find submit in UpdateBug', () => {
 
 
 //*********************************************** DELETE OPERATION ***********************************************
+
 
 
 
@@ -195,7 +224,7 @@ test('find submit in SearchProject', () => {
 // Testing usertId, submit inputForm for SearchStaff
 test('find submit in SearchStaff', () => {
   const { queryByTestId } = render(
-    <SearchStaff />
+    <SearchStaffById />
   );
   expect(queryByTestId("staffId", "submit")).toBeTruthy();
 });
@@ -213,7 +242,7 @@ test('find submit in SearchReport', () => {
   const { queryByTestId } = render(
     <SearchReportById />
   );
-  expect(queryByTestId("reportId", "submit")).toBeTruthy();
+  expect(queryByTestId("projectId", "submit")).toBeTruthy();
 
 });
 
@@ -229,6 +258,8 @@ test('find submit in GetMyMessages', () => {
 
 
 //*********************************************** GET ALL OPERATION ***********************************************
+
+
 
 
 // Testing submit inputForm for GetAllBug

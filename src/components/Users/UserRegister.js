@@ -1,96 +1,4 @@
-// import React, { useEffect, useState } from 'react';
-// import { useHistory } from 'react-router';
-// import axios from "axios";
 
-
-// const UserRegister = (props) => {
-//     const history = useHistory();
-
-//     const [user, setUser] = useState({
-//       userId:0,
-//       userPassword: '',
-//       userName: ''
-        
-//     });
-//     const [oneUser, setOneUser] = useState({
-//         userId:0,
-//         userPassword: '',
-//         userName: ''
-//     });
-
-//     const handleUserData = (evt) => {
-//         console.log("handleUserData", evt.target.name, evt.target.value);
-//         setUser({
-//             ...user,
-//             [evt.target.name]: evt.target.value
-//         });
-//     }
-
-//     const submitRegisterUser = (evt) => {
-//         console.log("submitRegisterUser");
-//         axios.post('http://localhost:8082/UserRegistration', user)
-//             .then((response) => {
-//                 setOneUser(response.data);
-
-//                 alert(`User Registered successfully!`)
-//                 history.push('/home');
-//             }).catch(error => {
-//                 alert('Enter Correct Details!');
-//             });
-//         evt.preventDefault();
-//     }
-
-   
-
-//     return (
-//         <div className="container" >
-//             <div>
-                
-//                 <form className="form form-group row" onSubmit={submitRegisterUser} >
-//                     <div>
-//                     {/* <p>Staff ID</p>
-//                     <input
-//                             type="number"
-//                             id="staffId"
-//                             name="staffId"
-//                             className="form-control mb-3"
-//                             placeholder="Staff Id"
-//                             onChange={handleStaffData}
-//                         /> */}
-//                                                 <p>User Name</p>
-//                         <input
-//                             type="text"
-//                             id="userName"
-//                             name="userName"
-//                             className="form-control mb-3"
-//                             placeholder="User Name"
-//                             onChange={handleUserData}
-//                         />
-//                         <p>User Password</p>
-//                         <input
-//                             type="text"
-//                             id="userPassword"
-//                             name="userPassword"
-//                             className="form-control mb-3"
-//                             placeholder="User Password"
-//                             onChange={handleUserData}
-//                         />
-//                         <input
-//                             type="submit"
-//                             id="submit"
-//                             name="submit"
-//                             className="btn btn-primary mb-3"
-//                             value="Register"
-//                         />
-//                     </div>
-//                 </form>
-               
-//                 {/* <p> {emp.eid} {emp.firstName} {emp.salary} </p> */}
-//             </div>
-//            </div> 
-//     );
-// }
-// export default UserRegister;
 
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
@@ -101,13 +9,13 @@ const UserRegister = (props) => {
     const history = useHistory();
     const [userList, setuserList] = useState([]);
     const [user, setUser] = useState({
-      userId:0,
-      userPassword: '',
-      userName: ''
-        
+        userId: 0,
+        userPassword: '',
+        userName: ''
+
     });
     const [oneUser, setOneUser] = useState({
-        userId:0,
+        userId: 0,
         userPassword: '',
         userName: ''
     });
@@ -125,9 +33,8 @@ const UserRegister = (props) => {
         axios.post('http://localhost:8082/UserRegistration', user)
             .then((response) => {
                 setOneUser(response.data);
-
                 alert(`User Registered successfully!`)
-                history.push('/home');
+                // history.push('/home');
             }).catch(error => {
                 alert('Enter Correct Details!');
             });
@@ -140,7 +47,12 @@ const UserRegister = (props) => {
         console.log(user.userId);
         axios.get(`http://localhost:8082/user/getAllUsers`)
             .then((response) => {
-                setuserList(response.data);
+                let result = [];
+                let data = response.data;
+                let res = data.find(us => us.userName === user.userName);
+                let info = res?res:[]
+                result.push(info)
+                setuserList(result);
                 console.log(userList)
             }).catch(error => {
                 alert("User ID does not exist!");
@@ -148,58 +60,81 @@ const UserRegister = (props) => {
         evt.preventDefault();
     }
 
-   
+
 
     return (
         <div className="container" >
             <div>
-                
+
                 <form className="form form-group row" onSubmit={submitRegisterUser} >
                     <div>
-                    {/* <p>Staff ID</p>
-                    <input
-                            type="number"
-                            id="staffId"
-                            name="staffId"
-                            className="form-control mb-3"
-                            placeholder="Staff Id"
-                            onChange={handleStaffData}
-                        /> */}
-                                                <p>User Name</p>
+                       
+                        <p>User Name</p>
                         <input
                             type="text"
                             id="userName"
                             name="userName"
-                            data-testid="userName"
                             className="form-control mb-3"
                             placeholder="User Name"
+                            data-testid="userName"
                             onChange={handleUserData}
                         />
                         <p>User Password</p>
                         <input
-                            type="text"
+                            type="password"
                             id="userPassword"
                             name="userPassword"
-                            data-testid="password"
-                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                             className="form-control mb-3"
                             placeholder="User Password"
+                            data-testid="password"
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                             onChange={handleUserData}
                         />
                         <input
                             type="submit"
                             id="submit"
                             name="submit"
+                            data-testid="submit"
                             className="btn btn-primary mb-3"
                             value="Register"
                         />
+                       
                     </div>
                 </form>
-                
-                    
-                {/* <p> {emp.eid} {emp.firstName} {emp.salary} </p> */}
+                <input
+                    type="submit"
+                    id="submit"
+                    name="submit"
+                    className="btn btn-primary mb-3"
+                    value="show"
+                    onClick={myUserId}
+                />
+                <table class="table table-hover table-secondary table-stripped">
+                    <thead>
+                        <tr>
+                            <th scope="col">USER ID</th>
+                            <th scope="col">USERNAME</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {userList.map((r, k) => {
+                            console.log(r);
+                            return (
+
+                                <tr k={k}>
+
+                                    <th scope="row">{r.userId}</th>
+                                    <td>{r.userName}</td>
+                                </tr>
+                            )
+                        })}
+
+                    </tbody>
+                </table>
             </div>
-           </div> 
+        </div>
     );
 }
 export default UserRegister;

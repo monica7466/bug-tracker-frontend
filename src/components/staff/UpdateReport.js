@@ -90,7 +90,7 @@ const UpdateReport = () => {
                     <div>
                         <p>REPORT ID<abbr title="This field is mandatory" aria-label="required">*</abbr></p>
                         <input
-                            type="text"
+                            type="number"
                             id="reportId"
                             name="reportId"
                             className="form-control mb-3"

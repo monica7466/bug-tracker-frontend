@@ -57,7 +57,7 @@ const AdminLogin = () => {
         <div className="container">
             <h4>Admin Login</h4>
             <hr />
-            <div class="card" style={{ width: "18rem" }} className="container">
+            <div className="card" style={{ width: "18rem" }} className="container">
                 <div class="card-body">
                     <form>
 

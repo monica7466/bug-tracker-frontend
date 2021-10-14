@@ -46,7 +46,7 @@ const ViewAssignedProject = () => {
                 setProjectList(response.data);
                 console.log(projectList)
             }).catch(error => {
-                alert("Bug ID does not exist!");
+                alert("Staff ID does not exist!");
             });
         evt.preventDefault();
     }

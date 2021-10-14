@@ -70,11 +70,11 @@ const AddMessage = () => {
         console.log("submitMsgData");
         axios.post('http://localhost:8082/message/addMessage', msg)
             .then((response) => {
-                setOneMsg(response.data);
+                setMsg(response.data);
                 alert('Message sent!')
             }).catch(error => {
                 console.log(error.message);
-                alert(error.response.data.message)
+                alert('Enter correct details')
 
             });
         evt.preventDefault();

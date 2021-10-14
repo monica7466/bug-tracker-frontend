@@ -51,7 +51,7 @@ const UpdateProject = () => {
         console.log("submitProjectData");
         axios.post('http://localhost:8082/Project/addProject', project)
             .then((response) => {
-                setOneProject(response.data);
+                setProject(response.data);
                 alert('Project updated successfully!')
             }).catch(error => {
                 console.log(error.message);

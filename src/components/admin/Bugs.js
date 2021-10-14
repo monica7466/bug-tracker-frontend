@@ -33,7 +33,7 @@ const Bugs = () => {
                     <div class="card-body">
                         <img src="https://bit.ly/3oLC3j4" class="card-img-top" alt="..." />
                         <h5 class="card-title text-dark">Search Bug</h5>
-                        <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text text-dark">Perform search  bug by using below button.</p>
                         <button type="button" class="btn btn-primary" onClick={searchBugs}>Search</button>
                     </div>
                 </div>
@@ -41,7 +41,7 @@ const Bugs = () => {
                     <div class="card-body">
                     <img src="https://bit.ly/3FCVb8Y" class="card-img-top" alt="..." />
                         <h5 class="card-title text-dark">Get All Bug</h5>
-                        <p class="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text text-dark">Perform get all  bug by using below button.</p>
                         <button type="button" class="btn btn-primary" onClick={viewBug}>GetAll</button>
                     </div>
                 </div>

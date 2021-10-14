@@ -90,7 +90,7 @@ const AddStaff = () => {
                         {/* Taking staff password from browser */}
                         <h6>Staff Password</h6>
                         <input
-                            type="text"
+                            type="password"
                             id="staffPassword"
                             name="staffPassword"
                             data-testid="staffPassword"
