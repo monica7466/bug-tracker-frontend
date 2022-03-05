@@ -17,13 +17,12 @@ import { useEffect } from 'react';
 * @see         alert 
 */
 const UserLogin = (props) => {
-
+    var required = true;
     const history = useHistory();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const [oneUser, setOneUser] = useState({
         userId: 0,
-        // employeeName: '',
         userName: '',
         userPassword: ''
     });
@@ -47,18 +46,22 @@ const UserLogin = (props) => {
     }
 
     const onSubmit = (evt) => {
-
-        axios.post('http://localhost:8082/UsersLogin', oneUser)
-            .then(async (response) => {
-                setOneUser(response.data);
-                setIsLoggedIn(true);
-                alert(`User Logged in successfully!`)
-                history.push('/userDashboard');
-            }).catch(error => {
-                console.log(error.message)
-                alert("User does not exist!");
-            });
-        evt.preventDefault();
+        if (oneUser.userId && oneUser.userPassword) {
+            axios.post('http://localhost:8082/UsersLogin', oneUser)
+                .then(async (response) => {
+                    setOneUser(response.data);
+                    setIsLoggedIn(true);
+                    alert(`User Logged in successfully!`)
+                    history.push('/userDashboard');
+                }).catch(error => {
+                    console.log(error.message)
+                    alert("User does not exist!");
+                });
+            evt.preventDefault();
+        }
+        else {
+            console.log("enter fields correctly");
+        }
     }
 
 
@@ -68,7 +71,7 @@ const UserLogin = (props) => {
             <h4>User Login</h4>
             <hr />
             <div className="card" style={{ width: "18rem" }} className="container">
-                <div class="card-body">
+                <div className="card-body">
                     <form>
 
 
@@ -79,8 +82,10 @@ const UserLogin = (props) => {
                                 name="userId"
                                 data-testid="userId"
                                 className="form-control mb-3"
+                                required={required}
                                 onChange={handleOneUserData}
-                                placeholder="Enter userName" />
+                                placeholder="Enter userId" />
+
                         </div>
 
                         <div className="form-group">
@@ -89,6 +94,7 @@ const UserLogin = (props) => {
                                 id="userPassword"
                                 name="userPassword"
                                 data-testid="password"
+                                required={required}
                                 className="form-control mb-3"
                                 pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                                 onChange={handleOneUserData}

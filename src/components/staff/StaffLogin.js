@@ -20,7 +20,7 @@ const StaffLogin = () => {
 
     const history = useHistory();
 
-
+    var required = true;
     const [oneStaff, setOneStaff] = useState({
         staffId: 0,
         staffName: '',
@@ -36,7 +36,7 @@ const StaffLogin = () => {
     }
 
     const onSubmit = (evt) => {
-
+        if (oneStaff.staffId && oneStaff.staffPassword) {
         axios.post('http://localhost:8082/StaffLogin', oneStaff)
             .then(async (response) => {
                 setOneStaff(response.data);
@@ -47,6 +47,10 @@ const StaffLogin = () => {
                 alert("Staff does not exist!");
             });
         evt.preventDefault();
+        }
+        else {
+            console.log("enter fields correctly");
+        }
     }
 
 
@@ -65,6 +69,7 @@ const StaffLogin = () => {
                             <input type="number"
                                 id="staffId"
                                 name="staffId"
+                                required={required}
                                 data-testid="staffId"
                                 className="form-control mb-3"
                                 onChange={handleOneStaffData}
@@ -76,6 +81,7 @@ const StaffLogin = () => {
                             <input type="password"
                                 id="staffPassword"
                                 name="staffPassword"
+                                required={required}
                                 data-testid="password"
                                 pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                                 className="form-control mb-3"

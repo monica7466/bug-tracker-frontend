@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 const AdminLogin = () => {
 
     const history = useHistory();
-
+    var required = true;
     //Data fields for input from browser
     const [oneAdmin, setOneAdmin] = useState({
         adminId: 0,
@@ -37,7 +37,7 @@ const AdminLogin = () => {
 * @see         alert 
 */
     const onSubmit = (evt) => {
-
+        if (oneAdmin.adminId && oneAdmin.adminPassword) {
         axios.post('http://localhost:8082/AdminLogin', oneAdmin)
             .then(async (response) => {
                 setOneAdmin(response.data);
@@ -48,6 +48,10 @@ const AdminLogin = () => {
                 alert(error.response.data.message)
             });
         evt.preventDefault();
+        }
+        else {
+            console.log("enter fields correctly");
+        }
     }
 
 
@@ -68,6 +72,7 @@ const AdminLogin = () => {
                                 id="adminId"
                                 name="adminId"
                                 data-testid="adminId"
+                                required={required}
                                 className="form-control mb-3"
                                 onChange={handleOneAdminData}
                                 placeholder="Enter Name"
@@ -79,6 +84,7 @@ const AdminLogin = () => {
                             <input type="password"
                                 id="adminPassword"
                                 data-testid="password"
+                                required={required}
                                 name="adminPassword"
                                 pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                                 className="form-control mb-3"

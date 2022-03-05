@@ -6,6 +6,7 @@ import axios from "axios";
 
 
 const UserRegister = (props) => {
+    var required = true;
     const history = useHistory();
     const [userList, setuserList] = useState([]);
     const [user, setUser] = useState({
@@ -29,6 +30,7 @@ const UserRegister = (props) => {
     }
 
     const submitRegisterUser = (evt) => {
+        if (oneUser.userId && oneUser.userPassword) {
         console.log("submitRegisterUser");
         axios.post('http://localhost:8082/UserRegistration', user)
             .then((response) => {
@@ -39,6 +41,10 @@ const UserRegister = (props) => {
                 alert('Enter Correct Details!');
             });
         evt.preventDefault();
+    }
+    else {
+        console.log("enter fields correctly");
+    }
     }
 
 
@@ -77,6 +83,7 @@ const UserRegister = (props) => {
                             className="form-control mb-3"
                             placeholder="User Name"
                             data-testid="userName"
+                            required={required}
                             onChange={handleUserData}
                         />
                         <p>User Password</p>
@@ -86,6 +93,7 @@ const UserRegister = (props) => {
                             name="userPassword"
                             className="form-control mb-3"
                             placeholder="User Password"
+                            required={required}
                             data-testid="password"
                             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                             onChange={handleUserData}
